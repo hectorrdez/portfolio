@@ -2,8 +2,8 @@
 # Format per row: id|slug|state|role|commit|commit_url
 # States: PENDING IN_PROCESS TESTING ENDED
 id|slug|state|role|commit|commit_url
-001|cleanup-scaffold|ENDED|frontend||
-002|design-tokens|PENDING|frontend||
+001|cleanup-scaffold|ENDED|frontend|455e510|
+002|design-tokens|ENDED|frontend||
 003|dark-mode-toggle|PENDING|frontend||
 004|layout-shell|PENDING|frontend||
 005|hero-section|PENDING|frontend||

@@ -22,9 +22,9 @@ export default function ButtonToogle({
       aria-disabled={cantInteract}
       onClick={() => !cantInteract && onChange?.(!value)}
       className={StringUtils.JoinClassName(
-        "relative inline-flex h-7 w-13 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+        "relative inline-flex h-7 w-13 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-accent",
         cantInteract ? "cursor-not-allowed opacity-60" : "cursor-pointer",
-        value ? "bg-primary" : "bg-gray-300",
+        value ? "bg-accent" : "bg-surface-alt",
         className,
       )}
       {...args}

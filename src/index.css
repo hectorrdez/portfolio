@@ -1,30 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-    /* Colors */
-    --color-primary: #586fd3;
-    --color-on-primary: #f2f2f2;
-    --color-secondary: #cccdd0;
-    --color-on-secondary: #212121;
+    /* Accent - used sparingly (CTAs, links, active states) */
+    --color-accent: #0071e3;
+    --color-on-accent: #ffffff;
 
-    /* Header */
-    --background-color-header: #fff;
-    --border-color-header: var(--color-primary);
-    --color-header-logo: var(--color-primary);
+    /* Neutrals - the majority of the UI */
+    --color-surface: #fbfbfd;
+    --color-surface-alt: #f5f5f7;
+    --color-border: #d2d2d7;
+    --color-text: #1d1d1f;
+    --color-text-muted: #6e6e73;
+}
 
-    /* Footer */
-    --background-color-footer: #c2c2c2;
-    --text-color-footer: #212121;
-    --text-color-footer-muted: #686868;
+[data-theme="dark"] {
+    --color-accent: #0a84ff;
+    --color-on-accent: #ffffff;
 
-    /* Buttons */
-    --button-background-primary: var(--color-primary);
-    --button-background-secondary: var(--color-secondary);
+    --color-surface: #0b0b0c;
+    --color-surface-alt: #1c1c1e;
+    --color-border: #38383a;
+    --color-text: #f5f5f7;
+    --color-text-muted: #98989d;
 
-    /* Toogle */
+    color-scheme: dark;
+}
 
-    /* Cards */
-    --background-color-card: #fff;
-    --border-color-card: #fff;
-    --border-size-card: 1;
+:root {
+    color-scheme: light;
+}
+
+body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    transition: background-color 200ms ease-out, color 200ms ease-out;
 }

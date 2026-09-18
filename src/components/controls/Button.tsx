@@ -12,11 +12,11 @@ export default function Button({
   ...args
 }: ButtonProps) {
   const variants = {
-    primary: "text-on-primary bg-primary",
-    secondary: "text-on-secondary bg-secondary",
+    primary: "text-on-accent bg-accent hover:opacity-90",
+    secondary: "text-text bg-surface-alt border border-border hover:bg-border/40",
   };
   const newClassName = StringUtils.JoinClassName(
-    "cursor-pointer min-w-[44px] min-h-[44px] flex flex-row justify-center items-center py-2 px-4 rounded-md font-semibold",
+    "cursor-pointer min-w-[44px] min-h-[44px] flex flex-row justify-center items-center py-2 px-4 rounded-md font-semibold transition-colors duration-200",
     variants[variant],
     className,
   );
