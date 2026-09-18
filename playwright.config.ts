@@ -14,7 +14,10 @@ export default defineConfig({
   webServer: {
     command: "npm run dev",
     url: "http://localhost:5173",
-    reuseExistingServer: !process.env.CI,
+    // Always spawn a fresh server: on Windows `npm run dev` can leave an orphaned
+    // vite process holding the port after a previous test.cjs run, silently
+    // serving a stale bundle to the next run if reused.
+    reuseExistingServer: false,
     timeout: 60_000,
   },
 });

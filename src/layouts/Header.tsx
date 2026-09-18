@@ -1,3 +1,4 @@
+import ThemeToggle from "@components/controls/ThemeToggle";
 import Row from "@components/placing/Row";
 
 export default function Header() {
@@ -7,6 +8,7 @@ export default function Header() {
         <span className="text-2xl font-semibold text-text">
           Héctor Rodríguez Tovar
         </span>
+        <ThemeToggle />
       </Row>
     </header>
   );

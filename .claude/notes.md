@@ -15,3 +15,5 @@
 - Componentes reutilizables del scaffold a mantener: `Button`, `ButtonLink`, `Card`, `Row`/`Column`/
   `RowInverted`/`ColumnInverted`, `DropdownFloating`. Adaptar, no duplicar.
 
+- Playwright webServer usa reuseExistingServer:false a proposito: en Windows npm run dev puede dejar un proceso vite huerfano tras un test.cjs anterior, sirviendo bundle viejo si se reutiliza. Ver playwright.config.ts.
+- Correccion: DropdownFloating se borro en feature 001 (solo lo usaba el dropdown de perfil SaaS, sin otro consumidor). No esta disponible para reusar; si se necesita un menu flotante, crear uno nuevo cuando haga falta.

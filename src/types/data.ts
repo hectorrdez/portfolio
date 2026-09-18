@@ -1,3 +1,4 @@
 export type ThemeData = {
-  mode?: "dark" | "light" | "system";
+  theme: "light" | "dark";
+  toggleTheme: () => void;
 };

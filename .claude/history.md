@@ -3,8 +3,8 @@
 # States: PENDING IN_PROCESS TESTING ENDED
 id|slug|state|role|commit|commit_url
 001|cleanup-scaffold|ENDED|frontend|455e510|
-002|design-tokens|ENDED|frontend||
-003|dark-mode-toggle|PENDING|frontend||
+002|design-tokens|ENDED|frontend|2ef1e4e|
+003|dark-mode-toggle|ENDED|frontend||
 004|layout-shell|PENDING|frontend||
 005|hero-section|PENDING|frontend||
 006|about-section|PENDING|frontend||
