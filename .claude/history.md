@@ -14,8 +14,8 @@ id|slug|state|role|commit|commit_url
 010|motion-polish|ENDED|frontend|eb005e6|
 011|projects-section|ENDED|frontend|b5e255a|
 012|design-system-v2|ENDED|frontend|11dcc3d|
-013|layout-shell-v2|ENDED|frontend||
-014|hero-v2|PENDING|frontend||
+013|layout-shell-v2|ENDED|frontend|2ac4a43|
+014|hero-v2|ENDED|frontend||
 015|about-v2|PENDING|frontend||
 016|experience-v2|PENDING|frontend||
 017|education-skills-v2|PENDING|frontend||
