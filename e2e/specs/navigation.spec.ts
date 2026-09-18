@@ -17,10 +17,11 @@ test("brand link scrolls back to the home section", async ({ page }) => {
 
 test("footer exposes real LinkedIn and email links", async ({ page }) => {
   await page.goto("/");
+  const footer = page.locator("footer");
   await expect(
-    page.getByRole("link", { name: /linkedin/i }),
+    footer.getByRole("link", { name: /linkedin/i }),
   ).toHaveAttribute("href", "https://www.linkedin.com/in/hectorrdez/");
-  await expect(page.getByRole("link", { name: /email/i })).toHaveAttribute(
+  await expect(footer.getByRole("link", { name: /email/i })).toHaveAttribute(
     "href",
     "mailto:hectorrdez@gmail.com",
   );

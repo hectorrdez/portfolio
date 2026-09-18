@@ -9,6 +9,6 @@ id|slug|state|role|commit|commit_url
 005|hero-section|ENDED|frontend|b9e13d3|
 006|about-section|ENDED|frontend|160f7d4|
 007|experience-section|ENDED|frontend|57277fe|
-008|education-skills-section|ENDED|frontend||
-009|contact-section|PENDING|frontend||
+008|education-skills-section|ENDED|frontend|5411315|
+009|contact-section|ENDED|frontend||
 010|motion-polish|PENDING|frontend||
