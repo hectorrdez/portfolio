@@ -23,8 +23,7 @@ Skills) si visualmente queda mejor que forzarlos en una sola columna.
   Git, GitLab, SonarQube, Jira, REST APIs, Axe, WCAG (bases), TypeScript, React, Tailwind CSS.
   Agrupar si aporta claridad (p.ej. "Testing & Accesibilidad" vs "Desarrollo") pero sin inventar
   categorías rígidas que no reflejen el CV.
-  Idiomas (si no se puso ya en la sección 006): Español (nativo), Inglés (lectura técnica),
-  Valenciano (avanzado).
+  Idiomas: ya cubiertos en la sección 006 (Sobre mí) — no duplicar aquí.
 - Reusar `Card.tsx` para las entradas de formación; badges de skills con Tailwind (tokens de
   `DESIGN.md`, no colores hardcodeados).
 - Scroll-reveal con el mismo patrón compartido de features anteriores.

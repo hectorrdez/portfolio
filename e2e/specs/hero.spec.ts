@@ -5,11 +5,12 @@ test("hero shows name, role and a CTA that scrolls to contact", async ({
 }) => {
   await page.goto("/");
 
+  const hero = page.locator("#home");
   await expect(
-    page.getByRole("heading", { level: 1, name: "Héctor Rodríguez Tovar" }),
+    hero.getByRole("heading", { level: 1, name: "Héctor Rodríguez Tovar" }),
   ).toBeVisible();
   await expect(
-    page.getByText("QA Analyst especializado en automatización"),
+    hero.getByText("QA Analyst especializado en automatización"),
   ).toBeVisible();
 
   await page.getByRole("button", { name: "Hablemos" }).click();

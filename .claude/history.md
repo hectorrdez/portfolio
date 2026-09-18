@@ -6,8 +6,8 @@ id|slug|state|role|commit|commit_url
 002|design-tokens|ENDED|frontend|2ef1e4e|
 003|dark-mode-toggle|ENDED|frontend|47cd3c6|
 004|layout-shell|ENDED|frontend|f7f58d3|
-005|hero-section|ENDED|frontend||
-006|about-section|PENDING|frontend||
+005|hero-section|ENDED|frontend|b9e13d3|
+006|about-section|ENDED|frontend||
 007|experience-section|PENDING|frontend||
 008|education-skills-section|PENDING|frontend||
 009|contact-section|PENDING|frontend||
