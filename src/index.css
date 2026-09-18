@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-primary: #586fd3;
+    --color-on-primary: #f2f2f2;
+    --color-secondary: #cccdd0;
+    --color-on-secondary: #212121;
+
+    /* Header */
+    --background-color-header: #fff;
+    --border-color-header: var(--color-primary);
+    --color-header-logo: var(--color-primary);
+
+    /* Footer */
+    --background-color-footer: #c2c2c2;
+    --text-color-footer: #212121;
+    --text-color-footer-muted: #686868;
+
+    /* Buttons */
+    --button-background-primary: var(--color-primary);
+    --button-background-secondary: var(--color-secondary);
+
+    /* Toogle */
+
+    /* Cards */
+    --background-color-card: #fff;
+    --border-color-card: #fff;
+    --border-size-card: 1;
+}
