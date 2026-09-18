@@ -10,12 +10,16 @@ export default function Header() {
       <Row className="items-center justify-between gap-4 px-4 sm:px-8 w-full">
         <a
           href="#home"
-          className="text-lg sm:text-2xl font-semibold text-text shrink-0"
+          className="text-lg sm:text-2xl font-semibold text-text shrink-0 flex-1 w-full justify-start"
         >
           Héctor Rodríguez Tovar
         </a>
-        <NavMenu />
-        <ThemeToggle />
+        <Row className="w-full flex-1 min-w-0 justify-center">
+          <NavMenu />
+        </Row>
+        <Row className="flex-1 w-full justify-end">
+          <ThemeToggle />
+        </Row>
       </Row>
     </header>
   );
@@ -26,7 +30,7 @@ function NavMenu() {
   const links = SECTIONS.filter((section) => section.id !== "home");
 
   return (
-    <nav aria-label="Secciones" className="min-w-0 overflow-x-auto">
+    <nav aria-label="Secciones" className="min-w-0 overflow-x-auto ">
       <ul className="flex gap-6 whitespace-nowrap">
         {links.map((section) => (
           <li key={section.id}>

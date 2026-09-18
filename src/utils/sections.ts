@@ -8,6 +8,7 @@ export const SECTIONS: SectionDef[] = [
   { id: "sobre-mi", label: "Sobre mí" },
   { id: "experiencia", label: "Experiencia" },
   { id: "formacion", label: "Formación" },
+  { id: "proyectos", label: "Proyectos" },
   { id: "contacto", label: "Contacto" },
 ];
 
