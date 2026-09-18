@@ -116,6 +116,10 @@
 :root {
     color-scheme: light;
 
+    /* Decorative background opacity - lower in light mode, where less contrast
+       headroom exists between text and the (lighter) page surface. */
+    --decor-opacity: 0.1;
+
     --color-surface: #f8fafc;
     --color-surface-container-lowest: #ffffff;
     --color-surface-container-low: #f1f5f9;
@@ -150,6 +154,8 @@
 
 [data-theme="dark"] {
     color-scheme: dark;
+
+    --decor-opacity: 0.18;
 
     --color-surface: #0b1326;
     --color-surface-container-lowest: #060e20;
@@ -229,5 +235,75 @@ button:focus-visible {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* Decorative background (Background.tsx): fixed layer behind all content.
+   --scroll-y/--mx/--my are written directly via ref.style.setProperty in a
+   rAF-throttled listener, never through React state (no re-renders on
+   scroll/mousemove). Values default to 0 so the blobs sit at their base
+   position and the spotlight stays invisible before any listener fires. */
+.bg-decor {
+    --scroll-y: 0;
+    --mx: 50%;
+    --my: 50%;
+}
+
+.bg-decor__blob {
+    position: absolute;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: var(--decor-opacity);
+    will-change: transform;
+    transform: translate3d(0, calc(var(--scroll-y) * var(--decor-rate, 0.1)), 0);
+}
+
+.bg-decor__blob--primary {
+    top: -10rem;
+    left: -8rem;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    --decor-rate: 0.06;
+}
+
+.bg-decor__blob--secondary {
+    top: 40%;
+    right: -12rem;
+    background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
+    --decor-rate: -0.1;
+}
+
+.bg-decor__blob--tertiary {
+    bottom: -14rem;
+    left: 20%;
+    background: radial-gradient(circle, var(--color-tertiary) 0%, transparent 70%);
+    --decor-rate: 0.14;
+}
+
+.bg-decor__spotlight {
+    position: absolute;
+    top: var(--my);
+    left: var(--mx);
+    width: 28rem;
+    height: 28rem;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+}
+
+.bg-decor[data-hovering="true"] .bg-decor__spotlight {
+    opacity: var(--decor-opacity);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-decor__blob {
+        transform: none;
+    }
+
+    .bg-decor__spotlight {
+        display: none;
     }
 }

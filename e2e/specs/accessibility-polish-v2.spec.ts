@@ -9,10 +9,9 @@ test("clicking an anchor link moves keyboard focus to the target section", async
     .getByRole("link", { name: "Contacto" })
     .click();
 
-  const focusedId = await page.evaluate(
-    () => document.activeElement?.id ?? null,
-  );
-  expect(focusedId).toBe("contacto");
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.id ?? null))
+    .toBe("contacto");
 });
 
 test("focus ring uses the primary color token on a link", async ({

@@ -1,3 +1,4 @@
+import Background from "@components/decor/Background";
 import StringUtils from "@utils/StringUtils";
 import type { ReactNode } from "react";
 import Footer from "./Footer";
@@ -12,6 +13,7 @@ export default function Page({ children, className = "" }: PageProps) {
   const newClassName = StringUtils.JoinClassName("min-h-screen", className);
   return (
     <>
+      <Background />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-container focus:text-on-primary-container focus:rounded-lg focus:font-mono focus:text-code-md"
