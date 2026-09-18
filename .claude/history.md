@@ -17,8 +17,8 @@ id|slug|state|role|commit|commit_url
 013|layout-shell-v2|ENDED|frontend|2ac4a43|
 014|hero-v2|ENDED|frontend|c170345|
 015|about-v2|ENDED|frontend|2f0758c|
-016|experience-v2|ENDED|frontend||
-017|education-skills-v2|PENDING|frontend||
+016|experience-v2|ENDED|frontend|be8a589|
+017|education-skills-v2|ENDED|frontend||
 018|projects-v2|PENDING|frontend||
 019|contact-v2|PENDING|frontend||
 020|accessibility-polish-v2|PENDING|frontend||

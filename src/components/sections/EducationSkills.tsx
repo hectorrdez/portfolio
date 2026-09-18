@@ -1,48 +1,57 @@
-import Card from "@components/cards/Card";
 import StringUtils from "@utils/StringUtils";
 import { useScrollReveal } from "@utils/useScrollReveal";
+import { GraduationCap, Terminal } from "lucide-react";
 
 type EducationEntry = {
-  school: string;
+  shortName: string;
   program: string;
+  school: string;
   period: string;
 };
 
 const EDUCATION: EducationEntry[] = [
   {
-    school: "IES Doctor Balmis",
-    program: "Desarrollo de Aplicaciones Web (DAW)",
-    period: "2025-2026",
+    shortName: "DAW",
+    program: "Desarrollo de Aplicaciones Web",
+    school: "IES Doctor Balmis (Alicante)",
+    period: "2025 – 2026",
   },
   {
-    school: "IES Doctor Balmis",
-    program: "Desarrollo de Aplicaciones Multiplataforma (DAM)",
-    period: "2022-2024",
+    shortName: "DAM",
+    program: "Desarrollo de Aplicaciones Multiplataforma",
+    school: "IES Doctor Balmis (Alicante)",
+    period: "2022 – 2024",
   },
   {
-    school: "IES Cavanilles",
+    shortName: "FP Mantenimiento",
     program: "Mantenimiento Electrónico",
-    period: "2018-2020",
+    school: "IES Cavanilles (Alicante)",
+    period: "2018 – 2020",
   },
 ];
 
-const SKILLS = [
-  "Java",
-  "Selenium",
-  "Cucumber",
-  "Appium",
-  "Jenkins",
-  "Docker",
-  "Git",
-  "GitLab",
-  "SonarQube",
-  "Jira",
-  "REST APIs",
-  "Axe",
-  "WCAG",
-  "TypeScript",
-  "React",
-  "Tailwind CSS",
+type SkillGroup = {
+  label: string;
+  dotColor: string;
+  skills: string[];
+};
+
+const SKILL_GROUPS: SkillGroup[] = [
+  {
+    label: "Automatización & Accesibilidad (Core)",
+    dotColor: "bg-tertiary",
+    skills: ["Selenium", "Cucumber", "Appium", "Axe", "WCAG", "SonarQube", "REST APIs"],
+  },
+  {
+    label: "Lenguajes & UI",
+    dotColor: "bg-primary",
+    skills: ["Java", "TypeScript", "React", "Tailwind CSS"],
+  },
+  {
+    label: "DevOps & Gestión",
+    dotColor: "bg-secondary",
+    skills: ["Docker", "Jenkins", "Git", "GitLab", "Jira"],
+  },
 ];
 
 export default function EducationSkills() {
@@ -51,52 +60,93 @@ export default function EducationSkills() {
   return (
     <section
       id="formacion"
-      className="min-h-screen px-6 py-24 flex flex-col items-center gap-12"
+      className="min-h-screen px-4 sm:px-8 py-24 flex items-center"
     >
       <div
         ref={ref}
         className={StringUtils.JoinClassName(
-          "reveal w-full max-w-3xl flex flex-col gap-12",
+          "reveal w-full max-w-6xl mx-auto flex flex-col gap-6",
           visible ? "reveal-visible" : undefined,
         )}
       >
-        <div className="flex flex-col gap-6">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-text">
-            Formación
+        <div className="flex flex-col gap-2 max-w-2xl">
+          <span className="font-mono text-code-sm uppercase tracking-widest text-primary">
+            04 // Capacitación &amp; Skills
+          </span>
+          <h2 className="text-headline-lg text-on-surface tracking-tight">
+            Formación académica y arsenal técnico
           </h2>
-          <div className="flex flex-col gap-4">
-            {EDUCATION.map((entry) => (
-              <Card
-                key={entry.period}
-                className="flex flex-wrap items-baseline justify-between gap-2"
-              >
-                <div>
-                  <h3 className="text-lg font-semibold text-text">
-                    {entry.program}
-                  </h3>
-                  <p className="text-text-muted">{entry.school}</p>
-                </div>
-                <span className="text-sm text-text-muted whitespace-nowrap">
-                  {entry.period}
-                </span>
-              </Card>
-            ))}
-          </div>
         </div>
 
-        <div className="flex flex-col gap-6">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-text">
-            Skills técnicos
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {SKILLS.map((skill) => (
-              <span
-                key={skill}
-                className="text-sm text-text-muted bg-surface-alt border border-border rounded-full px-3 py-1"
-              >
-                {skill}
-              </span>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div className="lg:col-span-5 flex flex-col gap-4 bg-surface-container p-6 rounded-xl">
+            <div className="flex items-center gap-2">
+              <GraduationCap
+                size={22}
+                className="text-primary"
+                aria-hidden
+              />
+              <h3 className="text-headline-md text-on-surface">
+                Educación Oficial
+              </h3>
+            </div>
+            <div className="flex flex-col gap-3">
+              {EDUCATION.map((entry) => (
+                <div
+                  key={entry.period}
+                  className="p-3 bg-surface-container-high rounded-lg flex flex-col gap-1"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-headline-sm text-on-surface">
+                      {entry.shortName}
+                    </span>
+                    <span className="font-mono text-code-sm text-secondary">
+                      {entry.period}
+                    </span>
+                  </div>
+                  <p className="text-body-md text-on-surface">
+                    {entry.program}
+                  </p>
+                  <span className="text-body-sm text-outline">
+                    {entry.school}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 flex flex-col gap-4 bg-surface-container p-6 rounded-xl">
+            <div className="flex items-center gap-2">
+              <Terminal size={22} className="text-secondary" aria-hidden />
+              <h3 className="text-headline-md text-on-surface">
+                Matriz de Habilidades Técnicas
+              </h3>
+            </div>
+            <div className="flex flex-col gap-3">
+              {SKILL_GROUPS.map((group) => (
+                <div key={group.label} className="flex flex-col gap-1.5">
+                  <span className="font-mono text-code-md text-on-surface flex items-center gap-1.5">
+                    <span
+                      className={StringUtils.JoinClassName(
+                        "w-2 h-2 rounded-full",
+                        group.dotColor,
+                      )}
+                    />
+                    {group.label}
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1.5 bg-surface-container-high text-on-surface font-mono text-code-sm rounded-lg"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
