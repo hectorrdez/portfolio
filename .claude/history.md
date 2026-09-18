@@ -22,4 +22,4 @@ id|slug|state|role|commit|commit_url
 018|projects-v2|ENDED|frontend|f143ece|
 019|contact-v2|ENDED|frontend|e9b5c96|
 020|accessibility-polish-v2|ENDED|frontend|a76cdc5|
-021|parallax-background|ENDED|frontend||
+021|parallax-background|ENDED|frontend|f50edbf|

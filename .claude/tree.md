@@ -23,6 +23,7 @@
 - .claude/features/018_projects-v2.md
 - .claude/features/019_contact-v2.md
 - .claude/features/020_accessibility-polish-v2.md
+- .claude/features/021_parallax-background.md
 - .claude/history.md
 - .claude/notes.md
 - .claude/project.md
@@ -60,6 +61,7 @@
 - e2e/specs/layout-shell-v2.spec.ts
 - e2e/specs/motion-polish.spec.ts
 - e2e/specs/navigation.spec.ts
+- e2e/specs/parallax-background.spec.ts
 - e2e/specs/projects.spec.ts
 - e2e/specs/smoke.spec.ts
 - e2e/specs/theme-toggle.spec.ts
@@ -80,6 +82,7 @@
 - src/components/controls/ButtonLink.tsx
 - src/components/controls/ButtonToogle.tsx
 - src/components/controls/ThemeToggle.tsx
+- src/components/decor/Background.tsx
 - src/components/placing/Column.tsx
 - src/components/placing/ColumnInverted.tsx
 - src/components/placing/Row.tsx
