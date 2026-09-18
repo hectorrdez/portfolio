@@ -21,4 +21,4 @@ id|slug|state|role|commit|commit_url
 017|education-skills-v2|ENDED|frontend|8895774|
 018|projects-v2|ENDED|frontend|f143ece|
 019|contact-v2|ENDED|frontend|e9b5c96|
-020|accessibility-polish-v2|ENDED|frontend||
+020|accessibility-polish-v2|ENDED|frontend|a76cdc5|
