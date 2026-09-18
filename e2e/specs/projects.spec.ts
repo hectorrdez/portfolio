@@ -46,15 +46,28 @@ test("EduGreen card has no live-app link, only repo links", async ({
   const section = page.locator("#proyectos");
   await section.scrollIntoViewIfNeeded();
 
-  const eduGreenCard = section
-    .locator("div")
-    .filter({ has: page.getByRole("heading", { level: 3, name: "EduGreen" }) })
-    .last();
+  const eduGreenCard = section.getByRole("article", { name: "EduGreen" });
 
   await expect(
     eduGreenCard.getByRole("link", { name: /^Ver aplicación/ }),
   ).toHaveCount(0);
   await expect(eduGreenCard.getByRole("link")).toHaveCount(2);
+});
+
+test("project cards show real tech stacks, not the mockup's invented ones", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const section = page.locator("#proyectos");
+  await section.scrollIntoViewIfNeeded();
+
+  const nexoCard = section.getByRole("article", { name: "Nexo" });
+  await expect(nexoCard.getByText("Next.js")).toHaveCount(0);
+  await expect(nexoCard.getByText("Vite", { exact: true })).toBeVisible();
+
+  const eduGreenCard = section.getByRole("article", { name: "EduGreen" });
+  await expect(eduGreenCard.getByText("Spring Boot")).toHaveCount(0);
+  await expect(eduGreenCard.getByText("MySQL", { exact: true })).toBeVisible();
 });
 
 test("nav includes Proyectos between Formación and Contacto", async ({
