@@ -4,8 +4,8 @@
 id|slug|state|role|commit|commit_url
 001|cleanup-scaffold|ENDED|frontend|455e510|
 002|design-tokens|ENDED|frontend|2ef1e4e|
-003|dark-mode-toggle|ENDED|frontend||
-004|layout-shell|PENDING|frontend||
+003|dark-mode-toggle|ENDED|frontend|47cd3c6|
+004|layout-shell|ENDED|frontend||
 005|hero-section|PENDING|frontend||
 006|about-section|PENDING|frontend||
 007|experience-section|PENDING|frontend||

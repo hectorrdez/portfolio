@@ -17,3 +17,4 @@
 
 - Playwright webServer usa reuseExistingServer:false a proposito: en Windows npm run dev puede dejar un proceso vite huerfano tras un test.cjs anterior, sirviendo bundle viejo si se reutiliza. Ver playwright.config.ts.
 - Correccion: DropdownFloating se borro en feature 001 (solo lo usaba el dropdown de perfil SaaS, sin otro consumidor). No esta disponible para reusar; si se necesita un menu flotante, crear uno nuevo cuando haga falta.
+- lucide-react instalado (v1.47) no incluye iconos de marca (Linkedin, Github, etc.) - fueron removidos del paquete. Para enlaces a redes usar un icono generico (ExternalLink) + texto legible, no inventar un import que no existe.

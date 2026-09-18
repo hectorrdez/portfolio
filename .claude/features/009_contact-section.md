@@ -20,7 +20,8 @@ de descarga del CV en PDF. Sin formulario ni backend (decisión del usuario).
   `ButtonLink`), nombre accesible claro.
 - Links directos de contacto (del CV): email `mailto:hectorrdez@gmail.com`, teléfono
   `tel:+34601274516`, LinkedIn `https://www.linkedin.com/in/hectorrdez/`. Cada uno con icono
-  (`lucide-react`: `Mail`, `Phone`, `Linkedin`) + texto legible (no solo icono).
+  (`lucide-react`: `Mail`, `Phone`, `ExternalLink` para LinkedIn — esta versión de lucide-react no
+  incluye iconos de marca) + texto legible (no solo icono).
 - Ubicación: Alicante, España — mostrar como texto simple, no como link.
 - Sin formulario HTML, sin envío de datos a ningún servicio.
 - Layout centrado, coherente con el resto de secciones (mismos tokens/spacing de `DESIGN.md`).
