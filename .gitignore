@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Harness relay runtime (keep relay.json tracked)
+.claude/handoff.md
+.claude/relay.pid
+.claude/relay.state
+.claude/relay.log
+.claude/relay.prompt.txt
+.claude/relay.launch.*
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
