@@ -8,7 +8,7 @@ id|slug|state|role|commit|commit_url
 004|layout-shell|ENDED|frontend|f7f58d3|
 005|hero-section|ENDED|frontend|b9e13d3|
 006|about-section|ENDED|frontend|160f7d4|
-007|experience-section|ENDED|frontend||
-008|education-skills-section|PENDING|frontend||
+007|experience-section|ENDED|frontend|57277fe|
+008|education-skills-section|ENDED|frontend||
 009|contact-section|PENDING|frontend||
 010|motion-polish|PENDING|frontend||
