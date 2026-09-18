@@ -10,5 +10,5 @@ id|slug|state|role|commit|commit_url
 006|about-section|ENDED|frontend|160f7d4|
 007|experience-section|ENDED|frontend|57277fe|
 008|education-skills-section|ENDED|frontend|5411315|
-009|contact-section|ENDED|frontend||
-010|motion-polish|PENDING|frontend||
+009|contact-section|ENDED|frontend|c46b6f5|
+010|motion-polish|ENDED|frontend||
