@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Héctor Rodríguez Tovar | Senior QA &amp; Accessibility Automation</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "error-container": "#93000a",
+          "tertiary-container": "#4c7a00",
+          "on-error": "#690005",
+          "on-primary-container": "#eeefff",
+          "on-secondary-container": "#00311f",
+          "on-tertiary": "#1f3700",
+          "on-tertiary-container": "#d3ff9b",
+          "outline-variant": "#434655",
+          "on-surface-variant": "#c3c6d7",
+          "on-error-container": "#ffdad6",
+          "on-primary-fixed": "#00174b",
+          "surface-container-high": "#222a3d",
+          "on-secondary": "#003824",
+          "tertiary-fixed-dim": "#91db2a",
+          "on-surface": "#dae2fd",
+          "primary": "#b4c5ff",
+          "error": "#ffb4ab",
+          "primary-fixed": "#dbe1ff",
+          "surface-container": "#171f33",
+          "primary-container": "#2563eb",
+          "inverse-surface": "#dae2fd",
+          "outline": "#8d90a0",
+          "on-tertiary-fixed": "#102000",
+          "surface-tint": "#b4c5ff",
+          "secondary-fixed": "#6ffbbe",
+          "on-background": "#dae2fd",
+          "secondary-fixed-dim": "#4edea3",
+          "tertiary": "#91db2a",
+          "surface-dim": "#0b1326",
+          "inverse-primary": "#0053db",
+          "surface-container-highest": "#2d3449",
+          "inverse-on-surface": "#283044",
+          "primary-fixed-dim": "#b4c5ff",
+          "background": "#0b1326",
+          "on-primary-fixed-variant": "#003ea8",
+          "surface": "#0b1326",
+          "on-secondary-fixed": "#002113",
+          "surface-bright": "#31394d",
+          "tertiary-fixed": "#acf847",
+          "secondary-container": "#00a572",
+          "secondary": "#4edea3",
+          "surface-container-low": "#131b2e",
+          "surface-container-lowest": "#060e20",
+          "on-primary": "#002a78",
+          "surface-variant": "#2d3449",
+          "on-secondary-fixed-variant": "#005236",
+          "on-tertiary-fixed-variant": "#304f00"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "margin-mobile": "1.25rem",
+          "space-md": "1rem",
+          "gutter-mobile": "1rem",
+          "gutter": "1.5rem",
+          "space-xl": "2.5rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "margin": "3rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "headline-lg-mobile": [
+            "Inter"
+          ],
+          "code-md": [
+            "JetBrains Mono"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "label-md": [
+            "JetBrains Mono"
+          ],
+          "headline-xl-mobile": [
+            "Inter"
+          ],
+          "code-lg": [
+            "JetBrains Mono"
+          ],
+          "headline-xl": [
+            "Inter"
+          ],
+          "code-sm": [
+            "JetBrains Mono"
+          ],
+          "label-sm": [
+            "JetBrains Mono"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "code-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.05em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "700"
+            }
+          ],
+          "code-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "code-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.08em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-space-md focus:py-space-sm focus:bg-primary-container focus:text-on-primary-container focus:font-label-md focus:text-label-md focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="#main-content">Saltar al contenido principal</a><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><a aria-label="Héctor Rodríguez Tovar - Inicio" class="flex items-center gap-space-sm group focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface rounded-lg" data-path="portfolio" href="#"><div class="px-space-sm py-space-xs bg-surface-container-high rounded-lg text-primary font-code-sm text-code-sm uppercase tracking-wider group-hover:bg-surface-container-highest group-hover:text-primary-fixed transition-colors">HRT // QA</div><span class="hidden xl:inline-block font-headline-sm text-headline-sm text-on-surface tracking-tight">Héctor R. Tovar</span></a><div aria-label="Estado de accesibilidad del sitio" class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-full" role="status"><span aria-hidden="true" class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">WCAG 2.2 AAA</span></div></div><nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-space-xs p-space-xs bg-surface-container-lowest rounded-xl" data-active-classes="bg-primary-container text-on-primary-container font-code-md text-code-md rounded-lg"><a class="px-space-md py-space-sm rounded-lg font-code-md text-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" data-path="sobre-mi" href="#sobre-mi">Sobre mí</a><a class="px-space-md py-space-sm rounded-lg font-code-md text-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" data-path="experiencia" href="#experiencia">Experiencia</a><a class="px-space-md py-space-sm rounded-lg font-code-md text-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" data-path="proyectos" href="#proyectos">Proyectos</a><a class="px-space-md py-space-sm rounded-lg font-code-md text-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" data-path="formacion" href="#formacion">Formación</a><a class="px-space-md py-space-sm rounded-lg font-code-md text-code-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" data-path="contacto" href="#contacto">Contacto</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><button aria-label="Cambiar tema claro u oscuro" class="w-11 h-11 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" id="theme-toggle" type="button"><span aria-hidden="true" class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span><span aria-hidden="true" class="material-symbols-outlined text-[20px] hidden dark:inline">light_mode</span></button><a class="hidden sm:inline-flex items-center justify-center min-h-[44px] px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm tracking-normal hover:bg-primary-container/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="#contacto">Contactar</a><div aria-hidden="true" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen" id="main-content"><div class="flex flex-col w-full">
+<!-- Top Accessibility Live Announcer & High-Contrast Ruler Strip -->
+<div aria-label="Telemetría de Accesibilidad" class="w-full bg-surface-container-lowest py-space-xs px-gutter flex flex-wrap items-center justify-between gap-space-sm" role="region">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        WCAG 2.2 AAA VERIFIED
+      </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant hidden md:inline">Contraste nominal: 14.2:1 (Texto en superficie primaria)</span>
+</div>
+<div class="flex items-center gap-space-md font-code-sm text-code-sm text-on-surface-variant">
+<span class="hidden sm:inline">Engine: Axe-core v4.9.1</span>
+<span class="inline-flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+        Zero a11y violations
+      </span>
+</div>
+</div>
+<!-- HERO SECTION -->
+<section aria-labelledby="hero-title" class="w-full px-gutter py-space-xl lg:py-margin flex flex-col gap-space-lg relative overflow-hidden">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="px-space-md py-space-xs rounded-full bg-surface-container-high text-primary font-code-md text-code-md tracking-tight">
+        QA Analyst · Test Automation &amp; Web/Mobile Accessibility
+      </span>
+<span class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+        Alicante, España · Disponible remoto / híbrido
+      </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight" id="hero-title">
+          Héctor Rodríguez Tovar
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+          Ingeniería de pruebas automatizadas y accesibilidad digital sin concesiones. Construyendo software robusto, auditable e inclusivo mediante suites con <span class="text-on-surface font-semibold">Java, Selenium, Cucumber, Appium y Axe-core</span> integradas en pipelines de CI/CD continuo.
+        </p>
+<!-- Terminal Widget QA Inspector -->
+<div aria-label="Consola de ejecución de suite de pruebas" class="w-full rounded-xl bg-surface-container-lowest p-space-md shadow-xl flex flex-col gap-space-sm" role="status">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-error-container"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-code-sm text-code-sm text-outline ml-space-xs">qa-automation-runner --profile=accessibility-full</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container text-tertiary">CI/CD PASS</span>
+</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant flex flex-col gap-1 pt-space-xs">
+<div class="flex items-center justify-between flex-wrap gap-2 text-on-surface">
+<span>▶ Test Suite Execution: <span class="text-secondary font-semibold">142 passed</span>, <span class="text-outline">0 failed</span>, <span class="text-outline">0 skipped</span></span>
+<span class="text-tertiary font-semibold">Accessibility Score: 100% (WCAG 2.2 AA/AAA)</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mt-1">
+<div class="bg-secondary h-full rounded-full w-full"></div>
+</div>
+<div class="flex items-center justify-between text-outline text-[11px] pt-1">
+<span>Duration: 4.82s · Browser: Headless Chromium + Android Driver</span>
+<span>Auditoría: Color Contrast, Screen Reader Tree, Keyboard Trap, Target Size 44px</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm shadow-md hover:bg-primary-container/90 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="#contacto">
+<span>Contactar conmigo</span>
+<span aria-hidden="true" class="material-symbols-outlined ml-space-xs text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-space-lg py-space-sm rounded-lg bg-surface-container text-on-surface font-code-md text-code-md shadow-sm hover:bg-surface-container-high transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="mailto:hector.rodriguez.tovar@email.com?subject=Solicitud%20Curriculum%20Vitae%20PDF">
+<span aria-hidden="true" class="material-symbols-outlined mr-space-xs text-[20px] text-primary">download</span>
+<span>Descargar CV (PDF)</span>
+</a>
+<a class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-space-md py-space-sm rounded-lg text-primary hover:text-on-surface font-code-md text-code-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="#proyectos">
+<span>Explorar proyectos</span>
+<span aria-hidden="true" class="material-symbols-outlined ml-1 text-[18px]">expand_more</span>
+</a>
+</div>
+</div>
+<!-- Hero Visual Metric Bento -->
+<div class="lg:col-span-4 flex flex-col gap-space-md w-full">
+<div class="rounded-xl bg-surface-container p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-outline">Garantía Operativa</span>
+<span aria-hidden="true" class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">100%</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Trazabilidad de pruebas e integración de gates de calidad para impedir regresiones en staging y producción.</p>
+</div>
+<div class="rounded-xl bg-surface-container p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-outline">Target Touch Size</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[22px]">touch_app</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">≥ 44×44 px</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cumplimiento estricto del criterio WCAG 2.2 (2.5.8 Target Size) en todo el layout e interfaces evaluadas.</p>
+</div>
+<!-- Quick In-Page Theme Controller -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-code-md text-code-md text-on-surface">Conmutador de Vista</span>
+<span class="font-body-sm text-body-sm text-outline">Verifica el contraste en ambos temas</span>
+</div>
+<button aria-label="Alternar tema claro y oscuro de la interfaz" class="min-h-[44px] min-w-[44px] px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-code-sm text-code-sm flex items-center justify-center gap-space-xs hover:bg-surface-container-highest transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" id="inpage-theme-switch" type="button">
+<span class="material-symbols-outlined text-[18px]">contrast</span>
+<span id="theme-status-text">Cambiar Tema</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SOBRE MÍ (ABOUT) -->
+<section aria-labelledby="about-heading" class="w-full px-gutter py-space-xl bg-surface-container-lowest" id="sobre-mi">
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-primary">01 // Trayectoria &amp; Enfoque</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="about-heading">
+          Sobre mí: Calidad sin suposiciones
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Especialista en Quality Assurance enfocado en testing automatizado, semiautomatizado y manual con una especialización profunda en accesibilidad para entornos web y mobile nativo.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Main Description -->
+<div class="lg:col-span-7 flex flex-col gap-space-md bg-surface-container p-space-lg rounded-xl shadow-md justify-between">
+<div class="flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-on-surface">
+              Mi trabajo une dos mundos tradicionalmente separados: la ingeniería de pruebas de alto rendimiento (E2E, integración, regresión) y las auditorías exhaustivas de conformidad digital según estándares <span class="text-secondary font-semibold">WCAG 2.1 y 2.2 (Nivel AA y AAA)</span>.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              No concibo la calidad como una fase posterior al despliegue, sino como un pilar estructural: diseño arquitecturas con Java, Selenium, Appium y Docker que corren en pipelines automáticos, impidiendo que el código con barreras de accesibilidad o defectos funcionales alcance la producción.
+            </p>
+<!-- Language Proficiency Tags -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Competencias Lingüísticas</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-sm bg-surface-container-high rounded-lg flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Español</span>
+<span class="font-label-md text-label-md text-tertiary">NATIVO</span>
+<span class="font-code-sm text-code-sm text-outline">Dominio total profesional</span>
+</div>
+<div class="p-space-sm bg-surface-container-high rounded-lg flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Valenciano</span>
+<span class="font-label-md text-label-md text-secondary">AVANZADO</span>
+<span class="font-code-sm text-code-sm text-outline">Bilingüe de entorno</span>
+</div>
+<div class="p-space-sm bg-surface-container-high rounded-lg flex flex-col gap-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Inglés</span>
+<span class="font-label-md text-label-md text-primary">TÉCNICO</span>
+<span class="font-code-sm text-code-sm text-outline">Documentación &amp; Testing</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Methodological Toolkit Chips -->
+<div class="pt-space-md">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider block mb-space-xs">Ecosistema y Metodología</span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Java</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Selenium</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Cucumber (BDD)</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Appium Mobile</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Docker</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Jenkins CI</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">GitLab CI/CD</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">SonarQube</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Jira &amp; Xray</span>
+<span class="px-space-sm py-1 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded">Axe-core</span>
+</div>
+</div>
+</div>
+<!-- Featured Philosophy Card -->
+<div class="lg:col-span-5 flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-high shadow-md relative overflow-hidden">
+<div class="flex flex-col gap-space-md relative z-10">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+              «La accesibilidad no es un checklist, es calidad de software»
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Un producto accesible es más veloz, tiene mejor semántica HTML, mayor indexabilidad y brinda una experiencia impecable a usuarios que navegan mediante lectores de pantalla (NVDA, JAWS, VoiceOver) o teclado asistido.
+            </p>
+<ul class="flex flex-col gap-space-xs text-on-surface font-code-sm text-code-sm" role="list">
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+                Auditorías WCAG 2.1 &amp; 2.2 (Criterios A, AA y AAA)
+              </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+                Testing con NVDA, VoiceOver y TalkBack en Android/iOS
+              </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+                Validación de foco visible, navegación tabular y traps
+              </li>
+<li class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">check</span>
+                Inclusión de reportes Axe en artefactos de compilación
+              </li>
+</ul>
+</div>
+<div class="pt-space-lg flex items-center justify-between relative z-10">
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Audit Standard</span>
+<span class="px-space-sm py-1 bg-surface-container-lowest text-tertiary font-code-sm text-code-sm rounded">ISO/IEC 40500 Compliant</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPERIENCIA PROFESIONAL -->
+<section aria-labelledby="experience-heading" class="w-full px-gutter py-space-xl" id="experiencia">
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-primary">02 // Experiencia Laboral</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="experience-heading">
+          Trayectoria técnica en DXC Technology
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Impacto medible en proyectos de banca, servicios públicos e industrias reguladas con arquitecturas de automatización avanzadas.
+        </p>
+</div>
+<!-- Experience Timeline Grid -->
+<div class="flex flex-col gap-space-md">
+<!-- Role 1: Senior QA Automation & Accessibility Engineer -->
+<article aria-labelledby="exp-role-1" class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="exp-role-1">
+                  QA Automation &amp; Accessibility Engineer
+                </h3>
+<span class="px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md">DXC TECHNOLOGY</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Alicante / Internacional · Banca y Servicios Corporativos</span>
+</div>
+<span class="font-code-md text-code-md text-secondary bg-surface-container-high px-space-md py-space-xs rounded-lg self-start md:self-auto">
+              jul 2024 – ago 2026
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Liderazgo en el diseño y ejecución de frameworks de automatización para validación continua de accesibilidad y estabilidad funcional en aplicaciones de gran escala:
+          </p>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-space-md font-body-sm text-body-sm text-on-surface" role="list">
+<li class="flex items-start gap-space-xs bg-surface-container-high p-space-md rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">settings_suggest</span>
+<div>
+<strong class="text-on-surface block font-semibold mb-0.5">Framework de Accesibilidad en Java</strong>
+                Diseño y arquitectura completa integrando Selenium WebDriver, Cucumber (BDD) y Axe-core sobre contenedores Docker para aislamiento de ejecuciones.
+              </div>
+</li>
+<li class="flex items-start gap-space-xs bg-surface-container-high p-space-md rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">policy</span>
+<div>
+<strong class="text-on-surface block font-semibold mb-0.5">Gates de Calidad en CI/CD</strong>
+                Automatización de auditorías en GitLab CI y Jenkins, estableciendo bloqueos automáticos en merge requests que incumplan los criterios WCAG 2.2 nivel AA.
+              </div>
+</li>
+<li class="flex items-start gap-space-xs bg-surface-container-high p-space-md rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5">smartphone</span>
+<div>
+<strong class="text-on-surface block font-semibold mb-0.5">Automatización Móvil Multiplataforma</strong>
+                Suites con Appium para clientes bancarios internacionales, validando flujos críticos de autenticación, transferencias e interacción táctil.
+              </div>
+</li>
+<li class="flex items-start gap-space-xs bg-surface-container-high p-space-md rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">groups</span>
+<div>
+<strong class="text-on-surface block font-semibold mb-0.5">Gestión, Trazabilidad &amp; Mentoring</strong>
+                Gestión integral de defectos en Jira con trazabilidad cruzada en GitLab. Mentoría técnica continua y onboarding para 2 becarios del equipo de QA.
+              </div>
+</li>
+</ul>
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs">
+<span class="font-code-sm text-code-sm text-outline">Tecnologías operativas:</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">Java 17</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">Selenium</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">Cucumber</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">Appium</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">Docker</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">GitLab CI</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-primary">Jenkins</span>
+<span class="font-code-sm text-code-sm px-space-xs py-0.5 bg-surface-container-lowest rounded text-secondary">Axe-core</span>
+</div>
+</article>
+<!-- Role 2: Software QA Intern -->
+<article aria-labelledby="exp-role-2" class="p-space-lg rounded-xl bg-surface-container shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="exp-role-2">
+                  Software QA Intern · Accessibility &amp; Mobile Testing
+                </h3>
+<span class="px-space-sm py-0.5 rounded bg-surface-container-highest text-on-surface font-label-md text-label-md">DXC TECHNOLOGY</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Alicante · División de Banca</span>
+</div>
+<span class="font-code-md text-code-md text-on-surface-variant bg-surface-container-high px-space-md py-space-xs rounded-lg self-start md:self-auto">
+              abr 2024 – jun 2024
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">science</span>
+<div>
+<strong class="text-on-surface block font-semibold mb-0.5">PoC de Accesibilidad Bancaria</strong>
+                Desarrollo de una prueba de concepto integral para evaluar el grado de cumplimiento de los estándares de accesibilidad digital en banca electrónica líder.
+              </div>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">leaderboard</span>
+<div>
+<strong class="text-on-surface block font-semibold mb-0.5">Benchmark de Herramientas de Testing</strong>
+                Análisis comparativo de motores automatizados (Axe, Pa11y, Lighthouse) frente a pruebas funcionales manuales en dispositivos Android e iOS nativos e híbridos.
+              </div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- PROYECTOS -->
+<section aria-labelledby="projects-heading" class="w-full px-gutter py-space-xl bg-surface-container-lowest" id="proyectos">
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-primary">03 // Proyectos Seleccionados</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="projects-heading">
+          Ingeniería de software con pruebas integradas
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Cada desarrollo cuenta con validaciones de código limpio, accesibilidad WCAG y estructuras orientadas a la experiencia del usuario.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Project 1: Nazaret336 -->
+<article aria-labelledby="proj-1-title" class="flex flex-col rounded-xl bg-surface-container shadow-md overflow-hidden justify-between">
+<div class="flex flex-col">
+<div class="w-full h-48 bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Modern scout group community web portal dashboard preview with accessible color schemes, clean navigation cards, dark navy and lime accents in crisp minimal UI design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAwmapSRTYTm4A056lRCXuxOf0GxdP89O57DjD81nXPnYuB8Ghs0hvblrp2ZNlQ5L8Hrq8yDsF4FPDXUA3vgbJz8EIaj80SFDiJShs8poMXYawkK_QuFycPuYLmZDExRWdNFQugylVfVv-dEXmSI1998LwstTq0LDeT4vcS029BSfKJEUESr77grNv6vQ2NLlKA4gdkptPv3BgOvU8_L97VOGap2h5pCNQ3tQvUcFmP9o2NVkJhBK_GQ"/>
+<span class="absolute top-3 left-3 z-20 font-label-md text-label-md px-space-sm py-0.5 rounded bg-surface-container-lowest text-secondary">
+                WCAG 2.2 AA VERIFIED
+              </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="proj-1-title">Nazaret336</h3>
+<span class="font-code-sm text-code-sm text-outline">Web Comunitaria</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Plataforma web oficial para un grupo scout: rediseño integral con arquitectura accesible, portal informativo para padres, calendarización de campamentos y gestión documental pública.
+              </p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">React</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Tailwind CSS</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Axe Auditing</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Responsive</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center gap-space-sm">
+<a aria-label="Ver Nazaret336 en vivo" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-code-md text-code-md hover:bg-primary-container/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://example.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">open_in_new</span>
+<span>Ver Web en vivo</span>
+</a>
+<a aria-label="Ver código de Nazaret336 en GitHub" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-code-md text-code-md hover:bg-surface-container-highest transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">terminal</span>
+<span>Código</span>
+</a>
+</div>
+</article>
+<!-- Project 2: Nexo -->
+<article aria-labelledby="proj-2-title" class="flex flex-col rounded-xl bg-surface-container shadow-md overflow-hidden justify-between">
+<div class="flex flex-col">
+<div class="w-full h-48 bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Civic tech platform user interface showing citizen participation graphs, accessibility contrast indicators, high legibility charts and modern civic dashboard design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDySTFYan2eQraeo993HoJam6rKtUqTFWx6TpmXrels-0hUiDhIemZE2FY9Rjap6PEY0WKc99vOoDfijkQw3gwRxeCqn68uaTkQs6Aj5oumJe61s_wZUCN68jq2L4NdOn7E-sWSKckYqPAaoS4uW4gU_0QErXe6Xz3fclpufDQNKSFp-O-oqZpEc-Z-ffIE5BHBOiUP0Zp2CHYYxRW865iwdzxdGHE0yzZpZNsiJAXY6MXj8r_0MnuHBg"/>
+<span class="absolute top-3 left-3 z-20 font-label-md text-label-md px-space-sm py-0.5 rounded bg-surface-container-lowest text-tertiary">
+                CIVIC ACCESS PASS
+              </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="proj-2-title">Nexo</h3>
+<span class="font-code-sm text-code-sm text-outline">Plataforma Ciudadana</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Plataforma cívica de transparencia y participación democrática local. Auditoría completa de accesibilidad según Real Decreto 1112/2018 para sitios del sector público.
+              </p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">TypeScript</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">WCAG 2.1 AAA</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Screen Reader Tested</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Next.js</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center gap-space-sm">
+<a aria-label="Ver Nexo en vivo" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-code-md text-code-md hover:bg-primary-container/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://example.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">open_in_new</span>
+<span>Ver Web en vivo</span>
+</a>
+<a aria-label="Ver código de Nexo en GitHub" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-code-md text-code-md hover:bg-surface-container-highest transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">terminal</span>
+<span>Código</span>
+</a>
+</div>
+</article>
+<!-- Project 3: Mambo Bot -->
+<article aria-labelledby="proj-3-title" class="flex flex-col rounded-xl bg-surface-container shadow-md overflow-hidden justify-between">
+<div class="flex flex-col">
+<div class="w-full h-48 bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Discord bot control dashboard showing real-time audio waveforms, queue management, volume controls and dark technical UI elements with blue neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbC-l4vfH60lWVrEwQZKmEOV1tQJb6qP3bn6oDWoDD90juYEEO2i5LtvE7hCdo54OPzFhP_btnJVdagsu95C1qpK3GQX5hkpvAuWuHFJ3pyujO58vVrwxmPaUErA6wr2O0GE0fspocAwb8veu2ehPYz_0pgMTNKYeNsKbvoV-q6WUJCsHUkjBGKEhy3lEVEdm5SueoGfKGYNA76KHLDZKda1MqYKIGgx_Jkje3n8snzpOzHD43hEkeQg"/>
+<span class="absolute top-3 left-3 z-20 font-label-md text-label-md px-space-sm py-0.5 rounded bg-surface-container-lowest text-primary">
+                HIGH CONCURRENCY
+              </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="proj-3-title">Mambo Bot</h3>
+<span class="font-code-sm text-code-sm text-outline">Audio &amp; Automation</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Bot de música avanzado para servidores Discord con dashboard web en tiempo real para gestión de colas, streaming de baja latencia y panel de ajustes de audio.
+              </p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Node.js</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Discord.js</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">WebSockets</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">REST API</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center gap-space-sm">
+<a aria-label="Ver Dashboard de Mambo Bot" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary-container font-code-md text-code-md hover:bg-primary-container/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://example.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">equalizer</span>
+<span>Ver Dashboard</span>
+</a>
+<a aria-label="Ver repositorio de Mambo Bot" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-code-md text-code-md hover:bg-surface-container-highest transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">terminal</span>
+<span>Código</span>
+</a>
+</div>
+</article>
+<!-- Project 4: EduGreen -->
+<article aria-labelledby="proj-4-title" class="flex flex-col rounded-xl bg-surface-container shadow-md overflow-hidden justify-between">
+<div class="flex flex-col">
+<div class="w-full h-48 bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Educational ecology web platform visual representation, carbon footprint calculator layout, environmental data metrics with emerald green and dark slate design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaEwUh-ZdABqhPe2zvrs3wv5D1uNBiK0RV8dSqV3zrX9YU2BVJ8yI8tOLRJtguFBCpsoEnwkX7gMF8r5DQLPeQWnpJyF5W2EenemwV5z0w8LduByDJywEUI6uS96eDsCQ1x6PASFLSGJNMVO8TVpSbePsQ0hHiBFnXUbV-5VZACSUFNdoWztciRqgzXEz5NMp60-hZ4MnPe2X5vTktSTSLlOriuZSyMyVCrR-CUYNnlwK_Th2JujxgkA"/>
+<span class="absolute top-3 left-3 z-20 font-label-md text-label-md px-space-sm py-0.5 rounded bg-surface-container-lowest text-tertiary">
+                PROYECTO ACADÉMICO FINAL
+              </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface" id="proj-4-title">EduGreen</h3>
+<span class="font-code-sm text-code-sm text-outline">Sostenibilidad &amp; Huella</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Plataforma formativa e interactiva sobre sostenibilidad medioambiental, cálculo de impacto ecológico personal y guías de reciclaje para centros educativos.
+              </p>
+<!-- Explicit Academic Notice as specified -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-xs text-outline font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">info</span>
+<span>Proyecto académico final · Repositorio disponible (sin demo en vivo)</span>
+</div>
+<div class="flex flex-wrap gap-space-xs pt-space-xs">
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Java</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Spring Boot</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">PostgreSQL</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-code-sm text-code-sm rounded">Jest / JUnit</span>
+</div>
+</div>
+</div>
+<div class="p-space-lg pt-0 flex items-center gap-space-sm">
+<a aria-label="Ver repositorio de EduGreen en GitHub" class="min-h-[44px] min-w-[44px] inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-surface-container-high text-on-surface font-code-md text-code-md hover:bg-surface-container-highest transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-1.5 text-[18px]">terminal</span>
+<span>Explorar Repositorio GitHub</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- FORMACIÓN & HABILIDADES TÉCNICAS -->
+<section aria-labelledby="skills-heading" class="w-full px-gutter py-space-xl" id="formacion">
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-primary">04 // Capacitación &amp; Skills</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="skills-heading">
+          Formación académica y arsenal técnico
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Formación oficial superior combinada con especialización continua en metodologías ágiles y calidad de software.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Formación Académica Timeline -->
+<div class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container p-space-lg rounded-xl shadow-md">
+<div class="flex items-center gap-space-xs">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[22px]">school</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Educación Oficial</h3>
+</div>
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="p-space-md bg-surface-container-high rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">DAW</span>
+<span class="font-code-sm text-code-sm text-secondary">2025 – 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Desarrollo de Aplicaciones Web</p>
+<span class="font-body-sm text-body-sm text-outline">IES Doctor Balmis (Alicante)</span>
+</div>
+<div class="p-space-md bg-surface-container-high rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">DAM</span>
+<span class="font-code-sm text-code-sm text-primary">2022 – 2024</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Desarrollo de Aplicaciones Multiplataforma</p>
+<span class="font-body-sm text-body-sm text-outline">IES Doctor Balmis (Alicante)</span>
+</div>
+<div class="p-space-md bg-surface-container-high rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">FP Mantenimiento</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">2018 – 2020</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Mantenimiento Electrónico</p>
+<span class="font-body-sm text-body-sm text-outline">IES Cavanilles (Alicante)</span>
+</div>
+</div>
+</div>
+<!-- Matriz de Habilidades / Skills -->
+<div class="lg:col-span-7 flex flex-col gap-space-md bg-surface-container p-space-lg rounded-xl shadow-md">
+<div class="flex items-center gap-space-xs">
+<span aria-hidden="true" class="material-symbols-outlined text-secondary text-[22px]">terminal</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Matriz de Habilidades Técnicas</h3>
+</div>
+<div class="flex flex-col gap-space-md pt-space-xs">
+<!-- Testing & A11y -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-code-md text-code-md text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                Automatización &amp; Accesibilidad (Core)
+              </span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Selenium WebDriver</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Cucumber / BDD Gherkin</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Appium (Android &amp; iOS)</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-secondary font-code-sm text-code-sm rounded-lg font-semibold">Axe-core</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-tertiary font-code-sm text-code-sm rounded-lg font-semibold">WCAG 2.2 Standards</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">SonarQube</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">REST API Testing (Postman/Newman)</span>
+</div>
+</div>
+<!-- Lenguajes & Frameworks -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-code-md text-code-md text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Lenguajes de Programación &amp; UI
+              </span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg font-semibold text-primary">Java (OOP, Streams, JUnit)</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">TypeScript</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">JavaScript (ES6+)</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">React</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Tailwind CSS (Design Systems)</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">HTML5 Semántico &amp; ARIA</span>
+</div>
+</div>
+<!-- DevOps & Herramientas -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-code-md text-code-md text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                DevOps, CI/CD &amp; Gestión
+              </span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Docker &amp; Contenedores</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Jenkins Pipelines</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Git &amp; GitLab CI/CD</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Jira Software &amp; Confluence</span>
+<span class="px-space-md py-1.5 bg-surface-container-high text-on-surface font-code-sm text-code-sm rounded-lg">Xray Test Management</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACTO DIRECTO (SIN FORMULARIO) -->
+<section aria-labelledby="contact-heading" class="w-full px-gutter py-space-xl bg-surface-container-lowest" id="contacto">
+<div class="flex flex-col gap-space-lg max-w-4xl mx-auto">
+<div class="flex flex-col gap-space-xs text-center items-center">
+<span class="font-code-sm text-code-sm uppercase tracking-widest text-primary">05 // Contacto Directo</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight" id="contact-heading">
+          Hablemos de calidad y accesibilidad
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+          Comunicación directa y sin intermediarios ni formularios tediosos. Disponible para incorporación a equipos técnicos, consultoría especializada o proyectos de automatización.
+        </p>
+</div>
+<!-- High-Contrast Direct Channels Bento Card -->
+<div class="rounded-xl bg-surface-container p-space-lg md:p-space-xl shadow-xl flex flex-col gap-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Email -->
+<a aria-label="Enviar email a hector.rodriguez.tovar@email.com" class="p-space-md bg-surface-container-high rounded-xl flex flex-col gap-space-xs hover:bg-surface-container-highest transition-all group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface min-h-[44px]" href="mailto:hector.rodriguez.tovar@email.com">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[24px]">mail</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">north_east</span>
+</div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Correo Electrónico</span>
+<span class="font-code-sm text-code-sm text-on-surface break-all">hector.rodriguez.tovar@email.com</span>
+</a>
+<!-- Telefono -->
+<a aria-label="Llamar al teléfono +34 600 000 000" class="p-space-md bg-surface-container-high rounded-xl flex flex-col gap-space-xs hover:bg-surface-container-highest transition-all group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface min-h-[44px]" href="tel:+34600000000">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[24px]">call</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors text-[18px]">north_east</span>
+</div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Teléfono Directo</span>
+<span class="font-code-md text-code-md text-on-surface">+34 600 00 00 00</span>
+</a>
+<!-- LinkedIn -->
+<a aria-label="Abrir perfil de LinkedIn de Héctor Rodríguez Tovar" class="p-space-md bg-surface-container-high rounded-xl flex flex-col gap-space-xs hover:bg-surface-container-highest transition-all group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface min-h-[44px]" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-tertiary text-[24px]">work</span>
+<span class="material-symbols-outlined text-outline group-hover:text-tertiary transition-colors text-[18px]">north_east</span>
+</div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-outline">Perfil Profesional</span>
+<span class="font-code-sm text-code-sm text-on-surface">linkedin.com/in/hector-qa</span>
+</a>
+</div>
+<!-- Featured Big CV Action -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">description</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm text-on-surface">Curriculum Vitae Oficial (PDF)</span>
+<span class="font-body-sm text-body-sm text-outline">Versión técnica actualizada · Formato ATS y accesible</span>
+</div>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center min-h-[44px] min-w-[44px] px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm hover:bg-primary-container/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface" href="mailto:hector.rodriguez.tovar@email.com?subject=Solicitud%20Curriculum%20Vitae%20PDF">
+<span class="material-symbols-outlined mr-space-xs text-[20px]">file_download</span>
+<span>Descargar CV en PDF</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- MICRO-INTERACTIONS & SMOOTH SCROLL SCRIPT -->
+<script>
+    (function () {
+      // 1. In-page Theme Toggle Hook sync with app shell
+      const inPageToggle = document.getElementById('inpage-theme-switch');
+      const themeStatus = document.getElementById('theme-status-text');
+
+      function updateThemeLabel() {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (themeStatus) {
+          themeStatus.textContent = isDark ? 'Modo Claro' : 'Modo Oscuro';
+        }
+      }
+
+      if (inPageToggle) {
+        inPageToggle.addEventListener('click', function () {
+          document.documentElement.classList.toggle('dark');
+          updateThemeLabel();
+        });
+      }
+      updateThemeLabel();
+
+      // 2. Keyboard-Accessible Smooth Scrolling for All Anchor Links
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+
+            // Set focus for accessibility
+            targetElement.setAttribute('tabindex', '-1');
+            targetElement.focus({ preventScroll: true });
+          }
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-xl"><div class="w-full px-gutter flex flex-col gap-space-lg"><div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm"><span class="px-space-sm py-space-xs bg-surface-container rounded font-code-sm text-code-sm text-primary">HRT // QA</span><span class="font-headline-sm text-headline-sm text-on-surface">Héctor Rodríguez Tovar</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Especialista en QA Automation &amp; Auditoría de Accesibilidad Web (WCAG 2.2, Axe Core, Playwright, Cypress).</p></div><div class="flex flex-wrap items-center gap-space-sm"><div class="flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-code-sm text-code-sm"><span aria-hidden="true" class="material-symbols-outlined text-[16px] text-secondary">location_on</span><span>Alicante, España</span></div><div class="flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-code-sm text-code-sm"><span aria-hidden="true" class="material-symbols-outlined text-[16px] text-tertiary">verified</span><span>ISTQB &amp; WCAG Certified</span></div></div></div><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pt-space-lg"><div class="flex flex-col gap-space-xs"><p class="font-code-sm text-code-sm text-on-surface-variant">© 2025 Héctor Rodríguez Tovar. Arquitectura de Calidad y Accesibilidad.</p><p class="font-code-sm text-code-sm text-outline">Diseñado con especificaciones de contraste WCAG nivel AAA y objetivos táctiles de 44x44px.</p></div><div class="flex items-center gap-space-md"><a aria-label="GitHub de Héctor Rodríguez" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" href="https://github.com" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="material-symbols-outlined text-[20px]">code</span></a><a aria-label="LinkedIn de Héctor Rodríguez" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" href="https://linkedin.com" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="material-symbols-outlined text-[20px]">work</span></a><a aria-label="Enviar correo electrónico" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-surface" href="mailto:contacto@hectorqa.dev"><span aria-hidden="true" class="material-symbols-outlined text-[20px]">mail</span></a></div></div></div></footer><script>const themeToggleBtn = document.getElementById('theme-toggle'); if (themeToggleBtn) { themeToggleBtn.addEventListener('click', () => { document.documentElement.classList.toggle('dark'); }); }</script></body></html>

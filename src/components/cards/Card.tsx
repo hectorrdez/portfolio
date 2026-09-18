@@ -8,7 +8,7 @@ type CardProps = ComponentProps<"div"> & {
 
 export default function Card({ children, className, ...args }: CardProps) {
   const newClassName = StringUtils.JoinClassName(
-    "rounded-lg p-6 bg-surface-alt",
+    "rounded-lg p-6 bg-surface-container border border-outline-variant",
     className,
   );
 

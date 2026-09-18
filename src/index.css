@@ -1,38 +1,192 @@
 @import "tailwindcss";
 
 @theme {
-    /* Accent - used sparingly (CTAs, links, active states) */
-    --color-accent: #0071e3;
-    --color-on-accent: #ffffff;
+    /* Font families - override Tailwind defaults instead of per-size tokens
+       (the Stitch export defines a fontFamily per text size, but every
+       headline/body size maps to Inter and every code/label size maps to
+       JetBrains Mono, so one override each is equivalent and simpler). */
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-    /* Neutrals - the majority of the UI */
-    --color-surface: #fbfbfd;
-    --color-surface-alt: #f5f5f7;
-    --color-border: #d2d2d7;
-    --color-text: #1d1d1f;
-    --color-text-muted: #6e6e73;
+    /* Type scale - bundles size/line-height/letter-spacing/weight per Tailwind v4's
+       --text-*--<companion> convention. Pair with font-sans (default) or font-mono. */
+    --text-headline-xl: 48px;
+    --text-headline-xl--line-height: 56px;
+    --text-headline-xl--letter-spacing: -0.02em;
+    --text-headline-xl--font-weight: 700;
+
+    --text-headline-xl-mobile: 32px;
+    --text-headline-xl-mobile--line-height: 40px;
+    --text-headline-xl-mobile--letter-spacing: -0.015em;
+    --text-headline-xl-mobile--font-weight: 700;
+
+    --text-headline-lg: 36px;
+    --text-headline-lg--line-height: 44px;
+    --text-headline-lg--letter-spacing: -0.02em;
+    --text-headline-lg--font-weight: 600;
+
+    --text-headline-lg-mobile: 28px;
+    --text-headline-lg-mobile--line-height: 36px;
+    --text-headline-lg-mobile--letter-spacing: -0.01em;
+    --text-headline-lg-mobile--font-weight: 600;
+
+    --text-headline-md: 24px;
+    --text-headline-md--line-height: 32px;
+    --text-headline-md--letter-spacing: -0.01em;
+    --text-headline-md--font-weight: 600;
+
+    --text-headline-sm: 20px;
+    --text-headline-sm--line-height: 28px;
+    --text-headline-sm--letter-spacing: -0.005em;
+    --text-headline-sm--font-weight: 600;
+
+    --text-body-lg: 18px;
+    --text-body-lg--line-height: 28px;
+
+    --text-body-md: 16px;
+    --text-body-md--line-height: 24px;
+
+    --text-body-sm: 14px;
+    --text-body-sm--line-height: 20px;
+
+    --text-code-lg: 16px;
+    --text-code-lg--line-height: 24px;
+    --text-code-lg--font-weight: 500;
+
+    --text-code-md: 14px;
+    --text-code-md--line-height: 20px;
+    --text-code-md--font-weight: 500;
+
+    --text-code-sm: 12px;
+    --text-code-sm--line-height: 16px;
+    --text-code-sm--font-weight: 500;
+
+    --text-label-md: 12px;
+    --text-label-md--line-height: 16px;
+    --text-label-md--letter-spacing: 0.05em;
+    --text-label-md--font-weight: 600;
+
+    --text-label-sm: 10px;
+    --text-label-sm--line-height: 14px;
+    --text-label-sm--letter-spacing: 0.08em;
+    --text-label-sm--font-weight: 600;
+
+    /* Radius - "Soft" geometry per DESIGN.md v2: crisp small default, larger
+       groupings get rounded-lg, pills use rounded-full (Tailwind default). */
+    --radius-DEFAULT: 0.25rem;
+    --radius-lg: 0.5rem;
+
+    /* Colors - dark is the default theme (Stitch export values). */
+    --color-surface: #0b1326;
+    --color-surface-container-lowest: #060e20;
+    --color-surface-container-low: #131b2e;
+    --color-surface-container: #171f33;
+    --color-surface-container-high: #222a3d;
+    --color-surface-container-highest: #2d3449;
+    --color-on-surface: #dae2fd;
+    --color-on-surface-variant: #c3c6d7;
+    --color-outline: #8d90a0;
+    --color-outline-variant: #434655;
+
+    --color-primary: #b4c5ff;
+    --color-on-primary: #002a78;
+    --color-primary-container: #2563eb;
+    --color-on-primary-container: #eeefff;
+
+    --color-secondary: #4edea3;
+    --color-on-secondary: #003824;
+    --color-secondary-container: #00a572;
+    --color-on-secondary-container: #00311f;
+
+    --color-tertiary: #91db2a;
+    --color-on-tertiary: #1f3700;
+    --color-tertiary-container: #4c7a00;
+    --color-on-tertiary-container: #d3ff9b;
+
+    --color-error: #ffb4ab;
+    --color-on-error: #690005;
+    --color-error-container: #93000a;
+    --color-on-error-container: #ffdad6;
+}
+
+/* Light theme - derived from the same M3-shaped roles (DESIGN.md v2 only specifies
+   dark values explicitly; light keeps the same hue relationships: porcelain/ink
+   base per DESIGN.md's prose, same brand hues re-balanced for AA contrast on
+   light surfaces). See notes.md for the contrast reasoning. */
+:root {
+    color-scheme: light;
+
+    --color-surface: #f8fafc;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f1f5f9;
+    --color-surface-container: #e9eef4;
+    --color-surface-container-high: #e2e8f0;
+    --color-surface-container-highest: #d7e0ea;
+    --color-on-surface: #0f172a;
+    --color-on-surface-variant: #334155;
+    --color-outline: #64748b;
+    --color-outline-variant: #cbd5e1;
+
+    --color-primary: #0053db;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #dbe1ff;
+    --color-on-primary-container: #00174b;
+
+    --color-secondary: #047857;
+    --color-on-secondary: #ffffff;
+    --color-secondary-container: #d1fae5;
+    --color-on-secondary-container: #00311f;
+
+    --color-tertiary: #4d7c0f;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #ecfccb;
+    --color-on-tertiary-container: #365314;
+
+    --color-error: #dc2626;
+    --color-on-error: #ffffff;
+    --color-error-container: #fee2e2;
+    --color-on-error-container: #7f1d1d;
 }
 
 [data-theme="dark"] {
-    --color-accent: #0a84ff;
-    --color-on-accent: #ffffff;
-
-    --color-surface: #0b0b0c;
-    --color-surface-alt: #1c1c1e;
-    --color-border: #38383a;
-    --color-text: #f5f5f7;
-    --color-text-muted: #98989d;
-
     color-scheme: dark;
-}
 
-:root {
-    color-scheme: light;
+    --color-surface: #0b1326;
+    --color-surface-container-lowest: #060e20;
+    --color-surface-container-low: #131b2e;
+    --color-surface-container: #171f33;
+    --color-surface-container-high: #222a3d;
+    --color-surface-container-highest: #2d3449;
+    --color-on-surface: #dae2fd;
+    --color-on-surface-variant: #c3c6d7;
+    --color-outline: #8d90a0;
+    --color-outline-variant: #434655;
+
+    --color-primary: #b4c5ff;
+    --color-on-primary: #002a78;
+    --color-primary-container: #2563eb;
+    --color-on-primary-container: #eeefff;
+
+    --color-secondary: #4edea3;
+    --color-on-secondary: #003824;
+    --color-secondary-container: #00a572;
+    --color-on-secondary-container: #00311f;
+
+    --color-tertiary: #91db2a;
+    --color-on-tertiary: #1f3700;
+    --color-tertiary-container: #4c7a00;
+    --color-on-tertiary-container: #d3ff9b;
+
+    --color-error: #ffb4ab;
+    --color-on-error: #690005;
+    --color-error-container: #93000a;
+    --color-on-error-container: #ffdad6;
 }
 
 body {
     background-color: var(--color-surface);
-    color: var(--color-text);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
     transition: background-color 200ms ease-out, color 200ms ease-out;
 }
 
@@ -57,7 +211,7 @@ section[id] {
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-primary);
     outline-offset: 2px;
 }
 
