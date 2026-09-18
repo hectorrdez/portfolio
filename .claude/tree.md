@@ -13,6 +13,7 @@
 - .claude/features/008_education-skills-section.md
 - .claude/features/009_contact-section.md
 - .claude/features/010_motion-polish.md
+- .claude/features/011_projects-section.md
 - .claude/history.md
 - .claude/notes.md
 - .claude/project.md
@@ -48,6 +49,7 @@
 - e2e/specs/hero.spec.ts
 - e2e/specs/motion-polish.spec.ts
 - e2e/specs/navigation.spec.ts
+- e2e/specs/projects.spec.ts
 - e2e/specs/smoke.spec.ts
 - e2e/specs/theme-toggle.spec.ts
 - eslint.config.js
@@ -58,6 +60,9 @@
 - public/cv/HectorRodriguezTovar_cv.pdf
 - public/favicon.svg
 - public/icons.svg
+- public/projects/edugreen-logo.svg
+- public/projects/nazaret336.png
+- public/projects/nexo.png
 - src/App.tsx
 - src/components/cards/Card.tsx
 - src/components/controls/Button.tsx
@@ -73,6 +78,7 @@
 - src/components/sections/EducationSkills.tsx
 - src/components/sections/Experience.tsx
 - src/components/sections/Hero.tsx
+- src/components/sections/Projects.tsx
 - src/contexts/Contexts.ts
 - src/contexts/ThemeProvider.tsx
 - src/index.css
