@@ -12,8 +12,8 @@ export default function LandingPage() {
       <Hero />
       <About />
       <Experience />
-      <EducationSkills />
       <Projects />
+      <EducationSkills />
       <Contact />
     </Page>
   );

@@ -1,28 +1,18 @@
 import { useTheme } from "@contexts/Contexts";
 import { Moon, Sun } from "lucide-react";
-import ButtonToogle from "./ButtonToogle";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
 
   return (
-    <div className="flex items-center gap-2">
-      <Sun
-        size={16}
-        aria-hidden
-        className={isDark ? "text-text-muted" : "text-accent"}
-      />
-      <ButtonToogle
-        value={isDark}
-        onChange={toggleTheme}
-        aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
-      />
-      <Moon
-        size={16}
-        aria-hidden
-        className={isDark ? "text-accent" : "text-text-muted"}
-      />
-    </div>
+    <button
+      type="button"
+      onClick={toggleTheme}
+      aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      className="w-11 h-11 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors duration-200"
+    >
+      {isDark ? <Sun size={20} aria-hidden /> : <Moon size={20} aria-hidden />}
+    </button>
   );
 }

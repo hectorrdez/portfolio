@@ -133,6 +133,26 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+// Best-effort: kill whatever is listening on `port`. On Windows, `npm run dev` (Vite)
+// can leave an orphaned process holding the port after an interrupted test run, which
+// makes the next Playwright webServer startup fail with EADDRINUSE. Never throws.
+function killPort(port) {
+  try {
+    if (os.platform() === 'win32') {
+      const netstat = spawnSync('netstat', ['-ano'], { encoding: 'utf8', shell: true });
+      const lines = (netstat.stdout || '').split(/\r?\n/).filter((l) => l.includes(`:${port}`) && l.includes('LISTENING'));
+      const pids = new Set(lines.map((l) => l.trim().split(/\s+/).pop()).filter(Boolean));
+      for (const pid of pids) spawnSync('taskkill', ['/F', '/PID', pid], { shell: true });
+    } else {
+      const lsof = spawnSync('lsof', ['-ti', `:${port}`], { encoding: 'utf8', shell: true });
+      const pids = (lsof.stdout || '').split(/\s+/).filter(Boolean);
+      for (const pid of pids) spawnSync('kill', ['-9', pid], { shell: true });
+    }
+  } catch {
+    // best effort only
+  }
+}
+
 // Windows gets gradlew.bat; macOS/Linux get the executable wrapper script.
 function gradlew() {
   return os.platform() === 'win32' ? 'gradlew.bat' : './gradlew';
@@ -173,4 +193,5 @@ module.exports = {
   sleep,
   gradlew,
   commitUrl,
+  killPort,
 };

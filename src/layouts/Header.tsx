@@ -6,19 +6,29 @@ import { useActiveSection } from "@utils/useActiveSection";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 h-16 flex justify-center items-center w-full bg-surface/90 backdrop-blur-md border-b border-border">
-      <Row className="items-center justify-between gap-4 px-4 sm:px-8 w-full">
+    <header className="sticky top-0 z-40 h-20 flex justify-center items-center w-full bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+      <Row className="items-center justify-between gap-3 px-4 sm:px-8 w-full">
         <a
           href="#home"
-          className="text-lg sm:text-2xl font-semibold text-text shrink-0 flex-1 w-full justify-start"
+          aria-label="Héctor Rodríguez Tovar - Inicio"
+          className="flex items-center gap-3 shrink-0"
         >
-          Héctor Rodríguez Tovar
+          <span className="px-2 py-1 bg-surface-container-high rounded-lg text-primary font-mono text-code-sm uppercase tracking-wider">
+            HRT // QA
+          </span>
+          <span className="hidden md:inline-block text-headline-sm text-on-surface">
+            Héctor R. Tovar
+          </span>
         </a>
-        <Row className="w-full flex-1 min-w-0 justify-center">
-          <NavMenu />
-        </Row>
-        <Row className="flex-1 w-full justify-end">
+        <NavMenu />
+        <Row className="items-center gap-3 flex-shrink-0">
           <ThemeToggle />
+          <a
+            href="#contacto"
+            className="hidden sm:inline-flex items-center justify-center min-h-11 px-4 rounded-lg bg-primary-container text-on-primary-container text-headline-sm hover:bg-primary-container/90 transition-colors duration-200"
+          >
+            Contactar
+          </a>
         </Row>
       </Row>
     </header>
@@ -30,25 +40,25 @@ function NavMenu() {
   const links = SECTIONS.filter((section) => section.id !== "home");
 
   return (
-    <nav aria-label="Secciones" className="min-w-0 overflow-x-auto ">
-      <ul className="flex gap-6 whitespace-nowrap">
-        {links.map((section) => (
-          <li key={section.id}>
-            <a
-              href={`#${section.id}`}
-              aria-current={active === section.id ? "true" : undefined}
-              className={StringUtils.JoinClassName(
-                "text-sm transition-colors duration-200 hover:text-accent",
-                active === section.id
-                  ? "text-accent font-medium"
-                  : "text-text-muted",
-              )}
-            >
-              {section.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <nav
+      aria-label="Secciones"
+      className="flex items-center gap-1 p-1 bg-surface-container-lowest rounded-xl min-w-0 overflow-x-auto"
+    >
+      {links.map((section) => (
+        <a
+          key={section.id}
+          href={`#${section.id}`}
+          aria-current={active === section.id ? "true" : undefined}
+          className={StringUtils.JoinClassName(
+            "px-3 py-2 rounded-lg font-mono text-code-md whitespace-nowrap transition-colors duration-200",
+            active === section.id
+              ? "bg-primary-container text-on-primary-container"
+              : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high",
+          )}
+        >
+          {section.label}
+        </a>
+      ))}
     </nav>
   );
 }

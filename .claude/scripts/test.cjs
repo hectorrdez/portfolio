@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const { run } = require('./_lib.cjs');
+const { run, killPort } = require('./_lib.cjs');
 
 console.log('[1/4] Typecheck (tsc -b)...');
 if (run('npx', ['tsc', '-b']) !== 0) {
@@ -21,6 +21,7 @@ if (run('npm', ['run', 'build']) !== 0) {
 }
 
 console.log('[4/4] Playwright E2E tests...');
+killPort(5173); // clear a stale orphaned dev server before Playwright starts its own
 if (run('npx', ['playwright', 'test']) !== 0) {
   console.log('FAIL: Playwright E2E tests');
   process.exit(1);

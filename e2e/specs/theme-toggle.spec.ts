@@ -5,11 +5,12 @@ test("toggles dark mode and persists it across reload", async ({ page }) => {
   const html = page.locator("html");
   await expect(html).not.toHaveAttribute("data-theme", "dark");
 
-  const toggle = page.getByRole("switch");
-  await expect(toggle).toHaveAccessibleName(/modo oscuro/i);
+  const toggle = page.getByRole("button", { name: /modo oscuro/i });
   await toggle.click();
   await expect(html).toHaveAttribute("data-theme", "dark");
-  await expect(toggle).toHaveAccessibleName(/modo claro/i);
+  await expect(
+    page.getByRole("button", { name: /modo claro/i }),
+  ).toBeVisible();
 
   await page.reload();
   await expect(html).toHaveAttribute("data-theme", "dark");
@@ -17,7 +18,7 @@ test("toggles dark mode and persists it across reload", async ({ page }) => {
 
 test("toggle is keyboard operable", async ({ page }) => {
   await page.goto("/");
-  const toggle = page.getByRole("switch");
+  const toggle = page.getByRole("button", { name: /modo oscuro/i });
   await toggle.focus();
   await page.keyboard.press("Enter");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");

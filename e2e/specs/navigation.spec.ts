@@ -10,7 +10,7 @@ test("brand link scrolls back to the home section", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("link", { name: "Contacto" }).click();
   await page
-    .getByRole("link", { name: "Héctor Rodríguez Tovar", exact: true })
+    .getByRole("link", { name: "Héctor Rodríguez Tovar - Inicio" })
     .click();
   await expect(page.locator("#home")).toBeInViewport();
 });
