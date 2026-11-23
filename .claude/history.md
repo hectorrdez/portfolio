@@ -24,7 +24,7 @@ id|slug|state|role|commit|commit_url
 020|accessibility-polish-v2|ENDED|frontend|a76cdc5|
 021|parallax-background|ENDED|frontend|f50edbf|
 022|reposition-ai-fullstack|ENDED|frontend|e3d6579|https://github.com/hectorrdez/portfolio/commit/e3d6579
-023|projects-data-github|IN_PROCESS|frontend||
+023|projects-data-github|IN_PROCESS|frontend|04f156c|https://github.com/hectorrdez/portfolio/commit/04f156c
 024|projects-v3-filters|PENDING|frontend||
 025|ai-harness-section|PENDING|frontend||
 026|experience-v3|PENDING|frontend||
