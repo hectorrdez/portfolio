@@ -2,6 +2,15 @@ import Card from "@components/cards/Card";
 import StringUtils from "@utils/StringUtils";
 import { useScrollReveal } from "@utils/useScrollReveal";
 import { Bot, FolderGit2, Globe, type LucideIcon } from "lucide-react";
+import { useState } from "react";
+import {
+  PROJECT_CATEGORIES,
+  PROJECTS_DATA,
+  type ProjectCategory,
+  type ProjectData,
+} from "../../data/projects.data";
+import ProjectDataCard from "./ProjectDataCard";
+import { CATEGORY_LABELS } from "./projectCategories";
 
 type ProjectImage =
   | { kind: "screenshot" | "logo"; src: string; alt: string }
@@ -16,6 +25,7 @@ type ProjectLink = {
 type ProjectDef = {
   name: string;
   category: string;
+  filter: ProjectCategory;
   description: string;
   image: ProjectImage;
   tags: string[];
@@ -26,6 +36,7 @@ const PROJECTS: ProjectDef[] = [
   {
     name: "Nazaret336",
     category: "Web Comunitaria",
+    filter: "web",
     description:
       "Sitio web del Grupo Scout Nazaret 336 (San Vicente del Raspeig, Alicante): promueve sus valores educativos, organiza la logística de sus secciones por edad y centraliza reuniones, campamentos y proyectos de servicio comunitario.",
     image: {
@@ -45,6 +56,7 @@ const PROJECTS: ProjectDef[] = [
   {
     name: "Nexo",
     category: "Plataforma Ciudadana",
+    filter: "web",
     description:
       "Plataforma institucional de transparencia y participación ciudadana: portal de auditoría pública en tiempo real, programa de gobierno por tareas medibles y un módulo de reclutamiento técnico con currículum ciego.",
     image: {
@@ -64,6 +76,7 @@ const PROJECTS: ProjectDef[] = [
   {
     name: "Mambo Bot",
     category: "Audio & Automatización",
+    filter: "herramientas",
     description:
       "Bot de música para Discord, self-hosted, con cola por servidor, modos de repetición, soporte de listas de YouTube y Spotify, control de acceso por rol de DJ y un dashboard web de estadísticas de uso.",
     image: { kind: "icon", icon: Bot },
@@ -79,6 +92,7 @@ const PROJECTS: ProjectDef[] = [
   {
     name: "EduGreen",
     category: "TFC · Sostenibilidad",
+    filter: "web",
     description:
       "Plataforma educativa de sostenibilidad medioambiental (Proyecto de Fin de Ciclo, DAW): el profesorado crea aulas y retos ecológicos, el alumnado los completa y compite en un ranking de clase combinando aprendizaje y gamificación.",
     image: {
@@ -102,7 +116,49 @@ const PROJECTS: ProjectDef[] = [
   },
 ];
 
+// Entries from projects.data.ts already represented by a rich card above.
+const SLUGS_ALREADY_SHOWN = new Set(["mambo-bot-v2", "edugreen"]);
+
+type Entry =
+  | { kind: "rich"; key: string; categoria: ProjectCategory; destacado: boolean; project: ProjectDef }
+  | { kind: "data"; key: string; categoria: ProjectCategory; destacado: boolean; project: ProjectData };
+
+// Destacados first; stable sort keeps the rest in source order.
+const ENTRIES: Entry[] = [
+  ...PROJECTS.map((project): Entry => ({
+    kind: "rich",
+    key: `rich-${project.name}`,
+    categoria: project.filter,
+    destacado: false,
+    project,
+  })),
+  ...PROJECTS_DATA.filter((project) => !SLUGS_ALREADY_SHOWN.has(project.slug)).map(
+    (project): Entry => ({
+      kind: "data",
+      key: project.slug,
+      categoria: project.categoria,
+      destacado: project.destacado,
+      project,
+    }),
+  ),
+].sort((a, b) => Number(b.destacado) - Number(a.destacado));
+
+type Filter = "todos" | ProjectCategory;
+
+const FILTERS: { value: Filter; label: string }[] = [
+  { value: "todos", label: "Todos" },
+  ...PROJECT_CATEGORIES.map((categoria) => ({
+    value: categoria,
+    label: CATEGORY_LABELS[categoria],
+  })),
+];
+
 export default function Projects() {
+  const [filter, setFilter] = useState<Filter>("todos");
+  const visibleEntries = ENTRIES.filter(
+    (entry) => filter === "todos" || entry.categoria === filter,
+  );
+
   return (
     <section
       id="proyectos"
@@ -117,10 +173,39 @@ export default function Projects() {
             Ingeniería de software con pruebas integradas
           </h2>
         </div>
+        <div
+          role="group"
+          aria-label="Filtrar proyectos por categoría"
+          className="flex flex-wrap gap-2"
+        >
+          {FILTERS.map((item) => {
+            const pressed = filter === item.value;
+            return (
+              <button
+                key={item.value}
+                type="button"
+                aria-pressed={pressed}
+                onClick={() => setFilter(item.value)}
+                className={StringUtils.JoinClassName(
+                  "font-mono text-code-md rounded-lg px-3 py-1.5 min-h-11 border transition-colors duration-200",
+                  pressed
+                    ? "bg-primary-container text-on-primary-container border-primary-container"
+                    : "bg-surface-container-high text-on-surface-variant border-outline-variant hover:text-on-surface hover:bg-surface-container-highest",
+                )}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {PROJECTS.map((project, index) => (
-            <ProjectCard key={project.name} project={project} index={index} />
-          ))}
+          {visibleEntries.map((entry, index) =>
+            entry.kind === "rich" ? (
+              <ProjectCard key={entry.key} project={entry.project} index={index} />
+            ) : (
+              <ProjectDataCard key={entry.key} project={entry.project} index={index} />
+            ),
+          )}
         </div>
       </div>
     </section>
