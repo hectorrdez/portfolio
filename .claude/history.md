@@ -26,7 +26,7 @@ id|slug|state|role|commit|commit_url
 022|reposition-ai-fullstack|ENDED|frontend|e3d6579|https://github.com/hectorrdez/portfolio/commit/e3d6579
 023|projects-data-github|ENDED|frontend|04f156c|https://github.com/hectorrdez/portfolio/commit/04f156c
 024|projects-v3-filters|ENDED|frontend|8c73188|https://github.com/hectorrdez/portfolio/commit/8c73188
-025|ai-harness-section|ENDED|frontend||
+025|ai-harness-section|ENDED|frontend|15ae026|https://github.com/hectorrdez/portfolio/commit/15ae026
 026|experience-v3|PENDING|frontend||
 027|skills-v2-ai|PENDING|frontend||
 028|cv-download-update|PENDING|frontend||
