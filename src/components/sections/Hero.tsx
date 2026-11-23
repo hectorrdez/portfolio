@@ -20,7 +20,7 @@ export default function Hero() {
       >
         <div className="flex flex-wrap items-center gap-2">
           <span className="px-3 py-1.5 rounded-full bg-surface-container-high text-primary font-mono text-code-md">
-            QA Analyst · Test Automation &amp; Web/Mobile Accessibility
+            Full-Stack Developer · desarrollo con agentes de IA
           </span>
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant font-mono text-code-sm">
             <MapPin size={14} className="text-primary" aria-hidden />
@@ -34,16 +34,16 @@ export default function Hero() {
               Héctor Rodríguez Tovar
             </h1>
             <p className="text-body-lg text-on-surface-variant max-w-2xl">
-              Ingeniería de pruebas automatizadas y accesibilidad digital.
-              Construyo software robusto e inclusivo con{" "}
+              Entrego producto con{" "}
               <span className="text-on-surface font-semibold">
-                Java, Selenium, Cucumber y Appium
+                TypeScript, React y Node
               </span>{" "}
-              integrados en pipelines de CI/CD.
+              apoyado en agentes de IA y un harness propio de 16 skills. Vengo
+              de QA Automation y accesibilidad en DXC Technology.
             </p>
 
             <div
-              aria-label="Herramientas de automatización y accesibilidad"
+              aria-label="Stack y calidad de desarrollo"
               className="w-full rounded-xl bg-surface-container-lowest p-4 flex flex-col gap-2"
             >
               <div className="flex items-center gap-1.5">
@@ -51,15 +51,15 @@ export default function Hero() {
                 <span className="w-3 h-3 rounded-full bg-tertiary-container" />
                 <span className="w-3 h-3 rounded-full bg-secondary-container" />
                 <span className="font-mono text-code-sm text-outline ml-2">
-                  qa-automation-runner --profile=accessibility
+                  fullstack-ia --profile=agentic
                 </span>
               </div>
               <p className="font-mono text-code-sm text-on-surface-variant pt-1">
-                Java · Selenium · Cucumber · Appium · Axe-core · Docker
+                TypeScript · React 19 · Node · Express · Playwright · Docker
               </p>
-              <p className="font-mono text-code-sm text-outline">
-                Accesibilidad y automatización integradas en cada pipeline,
-                no como una fase aparte.
+              <p className="font-mono text-code-sm text-on-surface-variant">
+                Cada feature se entrega con su test E2E y pasa un gate de
+                typecheck, lint, build y tests antes de cerrarse.
               </p>
             </div>
 
@@ -110,13 +110,13 @@ export default function Hero() {
             <div className="rounded-xl bg-surface-container p-4 flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-code-sm uppercase tracking-wider text-outline">
-                  Accesibilidad en CI/CD
+                  Gate de calidad
                 </span>
                 <Settings2 size={22} className="text-primary" aria-hidden />
               </div>
               <p className="text-body-sm text-on-surface-variant">
-                Integración de Axe-core en pipelines de Jenkins y GitLab para
-                bloquear regresiones de accesibilidad antes de producción.
+                Accesibilidad con axe dentro del pipeline, no como auditoría
+                manual al final.
               </p>
             </div>
           </div>

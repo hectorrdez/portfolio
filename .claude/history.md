@@ -23,3 +23,11 @@ id|slug|state|role|commit|commit_url
 019|contact-v2|ENDED|frontend|e9b5c96|
 020|accessibility-polish-v2|ENDED|frontend|a76cdc5|
 021|parallax-background|ENDED|frontend|f50edbf|
+022|reposition-ai-fullstack|ENDED|frontend||
+023|projects-data-github|PENDING|frontend||
+024|projects-v3-filters|PENDING|frontend||
+025|ai-harness-section|PENDING|frontend||
+026|experience-v3|PENDING|frontend||
+027|skills-v2-ai|PENDING|frontend||
+028|cv-download-update|PENDING|frontend||
+029|seo-og-meta|PENDING|frontend||

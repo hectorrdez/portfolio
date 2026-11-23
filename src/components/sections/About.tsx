@@ -8,17 +8,24 @@ const LANGUAGES = [
   { name: "Inglés", level: "TÉCNICO" },
 ];
 
-const METHODOLOGY = [
-  "Java",
-  "Selenium",
-  "Cucumber (BDD)",
-  "Appium",
+const STACK = [
+  "TypeScript",
+  "React 19",
+  "Node.js",
+  "Express",
+  "Tailwind CSS",
+  "Playwright",
   "Docker",
   "Jenkins",
-  "GitLab CI/CD",
-  "SonarQube",
-  "Jira",
+  "Selenium",
+  "Cucumber",
   "Axe-core",
+];
+
+const WHAT_I_DO = [
+  "Construyo apps completas: React 19 y Tailwind en el front, Express y TypeScript en el back.",
+  "Cada feature entra con su test E2E (Playwright) y pasa un gate de typecheck, lint, build y tests.",
+  "Diseñé un harness de desarrollo con IA: 16 skills portables para Claude Code, Codex y Antigravity.",
 ];
 
 const PHILOSOPHY_POINTS = [
@@ -45,7 +52,7 @@ export default function About() {
       >
         <div className="flex flex-col gap-2 max-w-2xl">
           <span className="font-mono text-code-sm uppercase tracking-widest text-primary">
-            01 // Trayectoria &amp; Enfoque
+            01 // Full-Stack Developer · desarrollo con agentes de IA
           </span>
           <h2 className="text-headline-lg text-on-surface tracking-tight">
             Sobre mí
@@ -56,16 +63,28 @@ export default function About() {
           <div className="lg:col-span-7 flex flex-col gap-4 bg-surface-container p-6 rounded-xl justify-between">
             <div className="flex flex-col gap-4">
               <p className="text-body-md text-on-surface">
-                Soy QA Analyst especializado en automatización de pruebas y
-                accesibilidad. Audito accesibilidad web y mobile combinando
-                testing automatizado, semiautomatizado y manual, y trabajo con
-                Java, Selenium y Cucumber en entornos CI/CD, participando en
-                el diseño y mantenimiento de frameworks de testing y
-                herramientas internas.
+                Si tu equipo quiere entregar más rápido con agentes de IA sin
+                que la calidad se resienta, hablamos el mismo idioma.
               </p>
               <p className="text-body-md text-on-surface-variant">
-                Soy autónomo, técnico y estoy orientado a la mejora continua.
+                Vengo de QA Automation y accesibilidad en DXC Technology, así
+                que desarrollo pensando en cómo se rompe lo que construyo. Hoy
+                trabajo como desarrollador full-stack con TypeScript, React y
+                Node, apoyado en agentes de IA que yo mismo oriento y verifico.
               </p>
+
+              <ul className="flex flex-col gap-2 text-body-sm text-on-surface-variant">
+                {WHAT_I_DO.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <Check
+                      size={18}
+                      className="text-secondary shrink-0 mt-0.5"
+                      aria-hidden
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
               <div className="flex flex-col gap-2 pt-1">
                 <span className="font-mono text-code-sm text-outline uppercase tracking-wider">
@@ -91,10 +110,10 @@ export default function About() {
 
             <div className="pt-2">
               <span className="font-mono text-code-sm text-outline uppercase tracking-wider block mb-2">
-                Ecosistema y metodología
+                Stack y herramientas
               </span>
               <div className="flex flex-wrap gap-1.5">
-                {METHODOLOGY.map((item) => (
+                {STACK.map((item) => (
                   <span
                     key={item}
                     className="px-2 py-1 bg-surface-container-high text-on-surface font-mono text-code-sm rounded"
