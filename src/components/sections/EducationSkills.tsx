@@ -38,19 +38,43 @@ type SkillGroup = {
 
 const SKILL_GROUPS: SkillGroup[] = [
   {
-    label: "Automatización & Accesibilidad (Core)",
-    dotColor: "bg-tertiary",
-    skills: ["Selenium", "Cucumber", "Appium", "Axe", "WCAG", "SonarQube", "REST APIs"],
-  },
-  {
-    label: "Lenguajes & UI",
+    label: "Front",
     dotColor: "bg-primary",
-    skills: ["Java", "TypeScript", "React", "Tailwind CSS"],
+    skills: ["TypeScript", "JavaScript", "React", "Tailwind CSS"],
   },
   {
-    label: "DevOps & Gestión",
+    label: "Back y datos",
     dotColor: "bg-secondary",
-    skills: ["Docker", "Jenkins", "Git", "GitLab", "Jira"],
+    skills: ["Node.js", "Express", "REST APIs", "MySQL", "Java", "Kotlin"],
+  },
+  {
+    label: "IA",
+    dotColor: "bg-tertiary",
+    skills: [
+      "Claude Code",
+      "Codex",
+      "Agentes y skills",
+      "Prompt engineering",
+      "Modelos locales",
+    ],
+  },
+  {
+    label: "Testing",
+    dotColor: "bg-primary",
+    skills: [
+      "Playwright",
+      "Selenium",
+      "Appium",
+      "Cucumber",
+      "Bruno",
+      "Axe-core",
+      "WCAG",
+    ],
+  },
+  {
+    label: "DevOps",
+    dotColor: "bg-secondary",
+    skills: ["Docker", "Dokploy", "Jenkins", "GitLab", "SonarQube", "Git", "Jira"],
   },
 ];
 
@@ -125,15 +149,16 @@ export default function EducationSkills() {
             <div className="flex flex-col gap-3">
               {SKILL_GROUPS.map((group) => (
                 <div key={group.label} className="flex flex-col gap-1.5">
-                  <span className="font-mono text-code-md text-on-surface flex items-center gap-1.5">
+                  <h4 className="font-mono text-code-md text-on-surface flex items-center gap-1.5">
                     <span
                       className={StringUtils.JoinClassName(
                         "w-2 h-2 rounded-full",
                         group.dotColor,
                       )}
+                      aria-hidden
                     />
                     {group.label}
-                  </span>
+                  </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {group.skills.map((skill) => (
                       <span
