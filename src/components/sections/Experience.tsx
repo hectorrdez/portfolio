@@ -3,8 +3,13 @@ import StringUtils from "@utils/StringUtils";
 import { useScrollReveal } from "@utils/useScrollReveal";
 import {
   BarChart3,
+  Bot,
   FlaskConical,
+  GitMerge,
+  Layers,
   type LucideIcon,
+  Puzzle,
+  Rocket,
   Settings2,
   ShieldCheck,
   Smartphone,
@@ -29,31 +34,80 @@ type ExperienceEntry = {
 
 const EXPERIENCE: ExperienceEntry[] = [
   {
+    company: "Proyectos propios",
+    role: "Desarrollador full-stack · Creador de dev-harness-skills",
+    location: "Alicante, España · Remoto",
+    period: "Junio 2026 – Actualidad",
+    current: true,
+    highlights: [
+      {
+        icon: Bot,
+        title: "Dev Harness Skills",
+        text: "16 skills portables (Claude Code, Codex, Antigravity) que crean proyectos, especifican features inmutables, las prueban con un gate automático y las cierran con estado trazable. Incluye relevo entre CLIs y modelos locales cuando se acaba la cuota.",
+      },
+      {
+        icon: Layers,
+        title: "Ecosistema ScoutTech",
+        text: "Cuenta central, frontends React, API Express + TypeScript, app Android (Kotlin), librería de UI pública, framework de tests Playwright + Appium + Cucumber, colecciones Bruno y pipelines Jenkins. Despliegue propio con Dokploy.",
+      },
+      {
+        icon: Puzzle,
+        title: "Claude Code Mods",
+        text: "7 mods propios: panel de agentes, medidor de uso 5h/7d, barra de contexto, auto-clear y mejora de prompts.",
+      },
+      {
+        icon: Rocket,
+        title: "Portfolio feature a feature",
+        text: "Portfolio personal construido feature a feature con el harness: 21 features, E2E por feature y accesibilidad cuidada.",
+      },
+    ],
+    tags: [
+      "TypeScript",
+      "React 19",
+      "Tailwind 4",
+      "Node",
+      "Express",
+      "Playwright",
+      "Docker",
+      "Jenkins",
+    ],
+  },
+  {
     company: "DXC Technology",
     role: "QA Automation & Accessibility Analyst",
     location: "Alicante / Internacional · Banca y Servicios Corporativos",
-    period: "Agosto 2024 – Agosto 2026",
+    period: "Agosto 2024 – Actualidad",
     current: true,
     highlights: [
       {
         icon: Settings2,
-        title: "Framework de Accesibilidad en Java",
-        text: "Arquitectura de APIs e infraestructura en Docker para un framework de automatización con Selenium WebDriver y Cucumber (BDD).",
+        title: "Framework de accesibilidad web",
+        text: "Desarrollé y mantuve un framework de testing de accesibilidad web (Java, Selenium, Cucumber) con API propia e infraestructura en Docker, alineado con WCAG.",
       },
       {
         icon: ShieldCheck,
-        title: "Gates de Calidad en CI/CD",
-        text: "Integración de pruebas de accesibilidad (Axe) en CI/CD, alineado con criterios WCAG.",
+        title: "Accesibilidad en CI/CD",
+        text: "Integré axe en CI/CD para que las auditorías de accesibilidad corrieran en cada ejecución y no a mano.",
+      },
+      {
+        icon: GitMerge,
+        title: "Pipelines Jenkins",
+        text: "Diseñé pipelines Jenkins que conectan SonarQube, GitLab y Jira: extraen métricas de calidad y abren tickets sin intervención manual.",
       },
       {
         icon: Smartphone,
-        title: "Automatización Móvil Multiplataforma",
-        text: "Mantenimiento de frameworks Selenium/Appium para un cliente internacional, con suites Cucumber sobre múltiples aplicaciones.",
+        title: "Automatización web y móvil",
+        text: "Mantuve frameworks Selenium/Appium con suites Cucumber en varias aplicaciones de un cliente internacional.",
       },
       {
         icon: Users,
-        title: "Gestión, Trazabilidad y Mentoring",
-        text: "Pipelines Jenkins con SonarQube, GitLab y Jira; mentoría a 2 becarios en automatización de pruebas y buenas prácticas de accesibilidad.",
+        title: "Mentoría",
+        text: "Mentoricé a 2 becarios en automatización y buenas prácticas de accesibilidad.",
+      },
+      {
+        icon: Bot,
+        title: "IA en el día a día",
+        text: "Usé IA de forma sistemática en el día a día (generación de tests, revisión, documentación).",
       },
     ],
     tags: [
@@ -100,7 +154,7 @@ export default function Experience() {
             02 // Experiencia Laboral
           </span>
           <h2 className="text-headline-lg text-on-surface tracking-tight">
-            Trayectoria técnica en DXC Technology
+            Trayectoria técnica
           </h2>
         </div>
         <div className="flex flex-col gap-6">
@@ -119,11 +173,12 @@ type ExperienceCardProps = {
 };
 
 function ExperienceCard({ entry, index }: ExperienceCardProps) {
-  const { ref, visible } = useScrollReveal<HTMLDivElement>();
+  const { ref, visible } = useScrollReveal<HTMLElement>();
 
   return (
-    <div
+    <article
       ref={ref}
+      aria-label={entry.role}
       style={{ transitionDelay: `${index * 100}ms` }}
       className={StringUtils.JoinClassName(
         "reveal",
@@ -145,7 +200,7 @@ function ExperienceCard({ entry, index }: ExperienceCardProps) {
                     : "bg-surface-container-highest text-on-surface",
                 )}
               >
-                DXC TECHNOLOGY
+                {entry.company.toUpperCase()}
               </span>
             </div>
             <span className="text-body-sm text-outline">
@@ -194,6 +249,6 @@ function ExperienceCard({ entry, index }: ExperienceCardProps) {
           </div>
         )}
       </Card>
-    </div>
+    </article>
   );
 }
