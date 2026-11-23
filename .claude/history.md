@@ -23,7 +23,7 @@ id|slug|state|role|commit|commit_url
 019|contact-v2|ENDED|frontend|e9b5c96|
 020|accessibility-polish-v2|ENDED|frontend|a76cdc5|
 021|parallax-background|ENDED|frontend|f50edbf|
-022|reposition-ai-fullstack|ENDED|frontend||
+022|reposition-ai-fullstack|ENDED|frontend|e3d6579|https://github.com/hectorrdez/portfolio/commit/e3d6579
 023|projects-data-github|PENDING|frontend||
 024|projects-v3-filters|PENDING|frontend||
 025|ai-harness-section|PENDING|frontend||
