@@ -29,5 +29,5 @@ id|slug|state|role|commit|commit_url
 025|ai-harness-section|ENDED|frontend|15ae026|https://github.com/hectorrdez/portfolio/commit/15ae026
 026|experience-v3|ENDED|frontend|9d37842|https://github.com/hectorrdez/portfolio/commit/9d37842
 027|skills-v2-ai|ENDED|frontend|cd52e7f|https://github.com/hectorrdez/portfolio/commit/cd52e7f
-028|cv-download-update|ENDED|frontend||
+028|cv-download-update|ENDED|frontend|87f3a80|https://github.com/hectorrdez/portfolio/commit/87f3a80
 029|seo-og-meta|PENDING|frontend||
