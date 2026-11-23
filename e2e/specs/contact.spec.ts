@@ -22,9 +22,9 @@ test("contact section exposes direct links and CV download", async ({
   });
   await expect(downloadLink).toHaveAttribute(
     "href",
-    "/cv/HectorRodriguezTovar_cv.pdf",
+    "/cv/HectorRodriguezTovar_cv_fullstack-ia.pdf",
   );
 
-  const response = await page.request.get("/cv/HectorRodriguezTovar_cv.pdf");
+  const response = await page.request.get("/cv/HectorRodriguezTovar_cv_fullstack-ia.pdf");
   expect(response.status()).toBe(200);
 });

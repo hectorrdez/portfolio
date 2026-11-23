@@ -74,8 +74,8 @@ export default function Hero() {
                 Contactar conmigo
               </Button>
               <a
-                href="/cv/HectorRodriguezTovar_cv.pdf"
-                download="HectorRodriguezTovar_cv.pdf"
+                href="/cv/HectorRodriguezTovar_cv_fullstack-ia.pdf"
+                download="HectorRodriguezTovar_cv_fullstack-ia.pdf"
                 aria-label="Descargar CV en PDF"
                 className="inline-flex items-center justify-center min-h-11 px-4 py-2 rounded-lg bg-surface-container text-on-surface border border-outline-variant font-mono text-code-md hover:bg-surface-container-high transition-colors duration-200"
               >

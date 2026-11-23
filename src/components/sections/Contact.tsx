@@ -115,8 +115,8 @@ export default function Contact() {
               </div>
             </div>
             <a
-              href="/cv/HectorRodriguezTovar_cv.pdf"
-              download="HectorRodriguezTovar_cv.pdf"
+              href="/cv/HectorRodriguezTovar_cv_fullstack-ia.pdf"
+              download="HectorRodriguezTovar_cv_fullstack-ia.pdf"
               aria-label="Descargar CV en PDF"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-11 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container text-headline-sm hover:bg-primary-container/90 transition-colors duration-200"
             >

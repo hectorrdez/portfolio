@@ -16,6 +16,12 @@ test("hero shows name, role and a CTA that scrolls to contact", async ({
   await expect(hero.getByText(/TypeScript, React y Node/)).toBeVisible();
   await expect(hero.getByText(/16 skills/)).toBeVisible();
   await expect(hero.getByRole("link", { name: "Descargar CV en PDF" })).toHaveText("Descargar CV (PDF)");
+  await expect(hero.getByRole("link", { name: "Descargar CV en PDF" })).toHaveAttribute("href", "/cv/HectorRodriguezTovar_cv_fullstack-ia.pdf");
+
+  const response = await page.request.get("/cv/HectorRodriguezTovar_cv_fullstack-ia.pdf");
+  expect(response.status()).toBe(200);
+  expect(response.headers()["content-type"]).toContain("pdf");
+  expect((await response.body()).subarray(0, 4).toString()).toBe("%PDF");
   await expect(hero.getByRole("link", { name: "Explorar proyectos" })).toBeVisible();
 
   await hero.getByRole("button", { name: "Contactar conmigo" }).click();
