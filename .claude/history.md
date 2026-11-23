@@ -28,6 +28,6 @@ id|slug|state|role|commit|commit_url
 024|projects-v3-filters|ENDED|frontend|8c73188|https://github.com/hectorrdez/portfolio/commit/8c73188
 025|ai-harness-section|ENDED|frontend|15ae026|https://github.com/hectorrdez/portfolio/commit/15ae026
 026|experience-v3|ENDED|frontend|9d37842|https://github.com/hectorrdez/portfolio/commit/9d37842
-027|skills-v2-ai|ENDED|frontend||
+027|skills-v2-ai|ENDED|frontend|cd52e7f|https://github.com/hectorrdez/portfolio/commit/cd52e7f
 028|cv-download-update|PENDING|frontend||
 029|seo-og-meta|PENDING|frontend||
