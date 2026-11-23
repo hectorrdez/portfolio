@@ -1,4 +1,5 @@
 import About from "@components/sections/About";
+import AiHarness from "@components/sections/AiHarness";
 import Contact from "@components/sections/Contact";
 import EducationSkills from "@components/sections/EducationSkills";
 import Experience from "@components/sections/Experience";
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <Experience />
       <Projects />
       <EducationSkills />
+      <AiHarness />
       <Contact />
     </Page>
   );

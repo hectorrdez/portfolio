@@ -20,6 +20,7 @@ test("nav lists sections in the new order", async ({ page }) => {
     "Experiencia",
     "Proyectos",
     "Formación",
+    "IA",
     "Contacto",
   ]);
 });

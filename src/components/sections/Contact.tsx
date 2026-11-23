@@ -54,7 +54,7 @@ export default function Contact() {
       >
         <div className="flex flex-col gap-2 text-center items-center">
           <span className="font-mono text-code-sm uppercase tracking-widest text-primary">
-            05 // Contacto Directo
+            06 // Contacto Directo
           </span>
           <h2 className="text-headline-lg text-on-surface tracking-tight">
             Hablemos de calidad y accesibilidad
